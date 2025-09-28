@@ -1,0 +1,41 @@
+.voice-recorder {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.record-button.recording {
+  background: #2ecc71;
+}
+.recording-container {
+  display: flex;
+  align-items: center;
+}
+
+.volume-indicator {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
+
+.audio-preview {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.send-button {
+  padding: 0.5rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

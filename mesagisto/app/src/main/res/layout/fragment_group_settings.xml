@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.group_settings.GroupSettingsFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/settings_group_photo_circle_image_view"
+        android:layout_width="@dimen/settings_user_photo_width"
+        android:layout_height="@dimen/settings_user_photo_height"
+        android:layout_margin="@dimen/margin_large"
+        android:src="@drawable/ic_group_change_photo"
+        style="@style/civ"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/settings_group_name"
+        style="@style/editText"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/margin_large"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:hint="@string/group_settings_name_hint"
+        app:layout_constraintBottom_toBottomOf="@+id/settings_group_photo_circle_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/settings_group_photo_circle_image_view"
+        app:layout_constraintTop_toTopOf="@+id/settings_group_photo_circle_image_view" />
+
+    <TextView
+        android:id="@+id/settings_group_label_users"
+        style="@style/settingsLabel"
+        android:text="@string/group_settings_label_users"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_group_photo_circle_image_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/settings_group_users_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_group_label_users"
+        tools:listitem="@layout/item_group_add_user" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/settings_group_floating_action_button"
+        style="@style/fab"
+        android:src="@drawable/ic_submit_changes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

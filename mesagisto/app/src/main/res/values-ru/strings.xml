@@ -1,0 +1,92 @@
+<resources>
+    <!--  Global  -->
+    <string name="changes_toast_empty_required_fields">Заполните обязательные поля</string>
+    <string name="changes_toast_spaces_in_inputs">Поля не должны содержать пробелов</string>
+    <string name="changes_toast_successful_update">Данные обновлены</string>
+    <string name="layout_default_text_user_name">Имя пользователя</string>
+
+    <!--  Registration  -->
+    <string name="registration_phone_label">Введите Ваш номер телефона</string>
+    <string name="registration_phone_hint">Номер телефона</string>
+    <string name="registration_title_phone_enter">Ввод номера телефона</string>
+    <string name="registration_confirm_phone_label">Введите код из SMS</string>
+    <string name="registration_toast_empty_phone">Введите номер телефона</string>
+
+    <!--  Chats  -->
+    <string name="chat_action_menu_clear_chat">Очистить чат</string>
+    <string name="chat_toast_chat_cleared">Чат очищен</string>
+    <string name="chat_action_menu_delete_chat">Удалить чат</string>
+    <string name="chat_toast_chat_deleted">Чат удален</string>
+    <string name="chat_message_empty_input">Введите сообщение</string>
+    <string name="chat_toast_message_deleted">Сообщение удалено</string>
+    <string name="chat_toast_message_changed">Сообщение изменено</string>
+    <string name="chat_input_message_hint">Сообщение</string>
+    <string name="chat_input_message_recording">Запись</string>
+    <string name="chat_message_default_text">Сообщение</string>
+
+    <!--  Bottom Navigation  -->
+    <string name="bottom_navigation_item_settings">Настройки</string>
+    <string name="bottom_navigation_item_main_list">Чаты</string>
+    <string name="bottom_navigation_item_contacts">Контакты</string>
+
+    <!--  Settings  -->
+    <string name="settings_title">Настройки</string>
+    <string name="settings_label_account">Аккаунт</string>
+    <string name="settings_account_label_phone_number">Номер телефона</string>
+    <string name="settings_account_label_login">Логин</string>
+    <string name="settings_account_additional_info">О себе</string>
+    <string name="settings_account_label_additional_info">Дополнительная информация</string>
+    <string name="settings_action_menu_exit">Выход</string>
+    <string name="settings_action_menu_change_fullname">Изменить имя</string>
+    <string name="settings_action_menu_change_user_photo">Сменить аватарку</string>
+    <string name="settings_label_other">Прочее</string>
+    <string name="settings_other_theme_switcher_text">Темная тема</string>
+    <string name="settings_other_theme_switcher_sub_text">Включить темную тему</string>
+    <string name="settings_label_theme_changed">Восхитительно!</string>
+
+    <!--  Change fullname  -->
+    <string name="change_fullname_title">Имя</string>
+    <string name="change_fullname_enter_name_hint">Имя (обязательно)</string>
+    <string name="change_fullname_enter_surname_hint">Фамилия (необязательно)</string>
+
+    <!--  Change login  -->
+    <string name="change_login_title">Логин</string>
+    <string name="change_login_enter_login_hint">Логин (обязательно)</string>
+    <string name="change_login_toast_login_already_in_use">Логин уже используется, попробуйте другой</string>
+
+    <!--  Change user info  -->
+    <string name="change_user_info_title">О себе</string>
+    <string name="change_user_info_user_info_hint">Дополнительная информация (необязательно)</string>
+
+    <!--  Groups  -->
+    <string name="group_settings_name_hint">Название группы (обязательно)</string>
+    <string name="group_settings_label_users">Список пользователей</string>
+    <string name="group_add_user_title">Добавить пользователей</string>
+    <string name="group_add_user_toast_no_users">Нельзя создать группу без участников</string>
+    <string name="group_action_menu_exit">Покинуть группу</string>
+    <string name="group_toast_left_group">Вы вышли из группы</string>
+    <string name="group_settings_title">Настройки группы</string>
+    <string name="group_settings_toast_choose_pic">Выберите картинку</string>
+    <string name="create_group">Создать группу</string>
+
+    <!--  Main List  -->
+    <string name="main_list_last_message_image">Картинка</string>
+    <string name="main_list_last_message_file">Файл</string>
+    <string name="main_list_last_message_voice">Голосовое сообщение</string>
+    <string name="main_list_last_message_sender_me">Вы</string>
+    <string name="main_list_last_message_no_messages">Сообщений нет</string>
+    <string name="main_list_last_message_default_text">Последнее сообщение</string>
+    <string name="main_list_title">Чаты</string>
+
+    <!--  Contacts  -->
+    <string name="contacts_title">Контакты</string>
+
+    <!--  Alert Dialogs  -->
+    <string name="alert_dialog_delete_message_title">Удаление сообщения</string>
+    <string name="alert_dialog_delete_message_content">Вы действительно хотите удалить данное сообщение?</string>
+    <string name="alert_dialog_button_delete">Удалить</string>
+    <string name="alert_dialog_button_cancel">Отмена</string>
+    <string name="alert_dialog_edit_message_title">Редактирование сообщения</string>
+    <string name="alert_dialog_button_save">Сохранить</string>
+
+</resources>

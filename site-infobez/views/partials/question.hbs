@@ -1,0 +1,20 @@
+<form action="/update-question" method="post" class="form-question" id="form-question">
+    <h1 name="question-num" id="question-num"></h1>
+
+    <p>Тема:&nbsp;
+        <select name="question-theme" id="select-theme"></select>
+    </p>
+
+    <p>Тип задания:&nbsp;
+        <select name="question-type" id="select-type"></select>
+    </p>
+
+    <p>Исходное сообщение:</p>
+    <textarea name="question-phrase"  id="question-phrase"></textarea>
+
+    <p>Ключ:</p>
+    <textarea name="question-key"  id="question-key"></textarea>
+
+    <p></p>
+    <input type="button" class="btn-refresh" value="Сохранить" onclick="UpdateQuestion(this)">
+</form>

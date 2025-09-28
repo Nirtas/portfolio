@@ -1,0 +1,110 @@
+﻿<Window x:Class="Messenger.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Messenger"
+        mc:Ignorable="d"
+        Title="Messenger" Height="700" Width="1050" Icon="messenger.png" MinHeight="550" MinWidth="950" FontFamily="Verdana" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="GridBarFriends" Height="40" VerticalAlignment="Top" Background="Gray">
+            <Button x:Name="ButOpenProfileMenu" Margin="10,10,291,10" Padding="0" BorderThickness="0" Cursor="Hand" Click="ButOpenProfileMenu_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="open-menu.png"/>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="TbSearchFriends" Text="Поиск собеседника..." GotFocus="Tb_GotFocus" LostFocus="Tb_LostFocus" Margin="0,10,10,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="259" VerticalContentAlignment="Center"/>
+        </Grid>
+
+        <Grid x:Name="GridFriends" Background="WhiteSmoke" Margin="0,40,0,0">
+            <TextBlock x:Name="Username" FontFamily="Verdana" FontWeight="Bold" TextTrimming="CharacterEllipsis" Margin="0,8,53,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Right" Width="210" Text="Всемогущий"/>
+            <TextBlock x:Name="LastMessageTime" Margin="0,6,5,0" Text="11:11" HorizontalAlignment="Right" Width="36" Height="16" VerticalAlignment="Top"/>
+            <TextBlock x:Name="LastMessage" Margin="0,28,39,0" FontFamily="Verdana" TextTrimming="CharacterEllipsis" HorizontalAlignment="Right" Height="14" VerticalAlignment="Top" Width="224" Text="Привет, а еще я умею делать вот так выыыы"/>
+            <Rectangle RadiusX="5" RadiusY="5" Fill="LightBlue" Margin="0,28,5,0" Height="14" VerticalAlignment="Top" HorizontalAlignment="Right" Width="29"/>
+            <TextBlock x:Name="CountUnreadMessages" Text="99+" Margin="0,28,6,0" Padding="0" LineHeight="Auto" FontFamily="Verdana" Height="16" VerticalAlignment="Top" HorizontalAlignment="Right" Width="25"/>
+            <Button x:Name="UserProfile" Width="321" Height="50" BorderThickness="0" Background="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="0.1" Cursor="Hand" Click="UserProfile_Click" Padding="0"/>
+            <Button x:Name="IconProfile" Margin="9.035,5.875,0,0" Height="40" BorderThickness="0" UseLayoutRounding="False" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40.156" Cursor="Hand" Click="IconProfile_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Image Source="avatar.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <TextBlock x:Name="Username_Copy" FontFamily="Verdana" FontWeight="Bold" TextTrimming="CharacterEllipsis" Margin="0,58,88,0" Height="18" VerticalAlignment="Top" HorizontalAlignment="Right" Width="175" Text="$лавик Ме$тный"/>
+            <TextBlock x:Name="LastMessageTime_Copy" Margin="0,56,5,0" Height="16" VerticalAlignment="Top" HorizontalAlignment="Right" Width="72" Text="23.06.2020"/>
+            <TextBlock x:Name="LastMessage_Copy" Margin="0,78,7,0" FontFamily="Verdana" TextTrimming="CharacterEllipsis" HorizontalAlignment="Right" Height="14" VerticalAlignment="Top" Width="256" Text="Вы: Где бабки? Я сейчас спущу своих собак, мелкий."/>
+            <Button x:Name="UserProfile_Copy" Width="321" Height="50" BorderThickness="0" Background="Red" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,50,0,0" Opacity="0.1" Cursor="Hand" Click="UserProfile_Click" Padding="0"/>
+            <Button x:Name="IconProfile_Copy" Margin="9,55.5,0,0" Height="40" BorderThickness="0" UseLayoutRounding="False" VerticalAlignment="Top" HorizontalAlignment="Left" Width="40" Cursor="Hand" Click="IconProfile_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Image Source="avatar.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <Grid x:Name="GridProfileMenu" Visibility="Hidden">
+            <Grid x:Name="GridProfileMenuTop" Background="#FF767171" Height="200" VerticalAlignment="Top" HorizontalAlignment="Right" Width="321">
+                <Button x:Name="ButCloseProfileMenu" Margin="0,10,291,0" Padding="0" BorderThickness="0" Cursor="Hand" Click="ButCloseProfileMenu_Click" HorizontalAlignment="Right" Width="20" Height="20" VerticalAlignment="Top">
+                    <Button.Background>
+                        <ImageBrush ImageSource="close-menu.png"/>
+                    </Button.Background>
+                </Button>
+                <Image Source="avatar.png" Margin="0,47,120,0" Height="80" VerticalAlignment="Top" HorizontalAlignment="Right" Width="80"/>
+                <TextBlock x:Name="TbkProfileMenuNickname" Margin="0,144,30,0"  Foreground="White" FontSize="14" TextAlignment="Center" HorizontalAlignment="Right" Width="261" Height="50" VerticalAlignment="Top"/>
+            </Grid>
+
+            <Grid x:Name="GridProfileMenuBottom" Margin="0,200,0,0">
+                <TextBlock Text="Изменить аватарку" Margin="0,18,10,0" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right" Width="291" Height="23"/>
+                <Button x:Name="ButProfileMenuChangeAvatar" Margin="0,10,0,0" FontSize="14" Opacity="0.3" BorderThickness="0" Width="321" Height="35"  HorizontalAlignment="Right" VerticalAlignment="Top" Click="ButProfileMenuChangeAvatar_Click"/>
+
+                <TextBlock Text="Изменить ник" Margin="0,54,10,0" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right" Width="291" Height="23"/>
+                <Button x:Name="ButProfileMenuChangeNickname" Margin="0,46,0,0" FontSize="14" Opacity="0.3" BorderThickness="0" HorizontalAlignment="Right" Width="321" Height="35" VerticalAlignment="Top" Click="ButProfileMenuChangeNickname_Click"/>
+            </Grid>
+        </Grid>
+
+        <Grid x:Name="GridBarChat" Height="40" VerticalAlignment="Top" Background="LightBlue" Margin="0,0,-713,0" Grid.Column="1">
+            <TextBlock x:Name="UsernameChat" FontFamily="Verdana" FontWeight="Bold" TextTrimming="CharacterEllipsis" Margin="10,5,490,0" Height="17" VerticalAlignment="Top" Text="$лавик Ме$тный"/>
+            <TextBlock x:Name="TbUserStatus" Text="Не в сети" Margin="10,22,627,8" FontSize="8"/>
+            <Button Margin="691,10,10,10" BorderThickness="0" Padding="0" Click="Button_Click_1" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush ImageSource="icon_menu.png"/>
+                </Button.Background>
+            </Button>
+        </Grid>
+
+        <Grid x:Name="GridChat" Background="AntiqueWhite" Grid.Column="1" Margin="0,40,-714,0" HorizontalAlignment="Left" Width="721">
+            <Grid x:Name="GridMessages" Background="Bisque" Margin="0,0,0,40">
+                <Button x:Name="ChatUserMessage" Background="Gray" Margin="0,0,461,95" HorizontalAlignment="Right" Width="250" Height="36" VerticalAlignment="Bottom"/>
+                <Button x:Name="ChatMessage" Background="LightGray" Margin="0,0,10,30" Height="35" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="250"/>
+            </Grid>
+
+            <Grid x:Name="GridBarWriteMessages" Background="DarkGray" HorizontalAlignment="Left" Width="721" Height="40" VerticalAlignment="Bottom">
+                <Button x:Name="ButChatAttach" Cursor="Hand" Margin="10,0,691,10" Padding="0" BorderThickness="0" Height="20" VerticalAlignment="Bottom">
+                    <Button.Background>
+                        <ImageBrush ImageSource="attach.png"/>
+                    </Button.Background>
+                </Button>
+
+                <TextBox x:Name="TbChatMessage"  Margin="45,0,0,10" Text="Текст сообщения..." BorderThickness="0" Foreground="Black" BorderBrush="DarkGray" Background="DarkGray" VerticalContentAlignment="Center" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="596" GotFocus="Tb_GotFocus" LostFocus="Tb_LostFocus"/>
+                <Button x:Name="ButChatEmoji" Margin="656,0,45,10" BorderThickness="0" Padding="0" Height="20" VerticalAlignment="Bottom" Cursor="Hand">
+                    <Button.Background>
+                        <ImageBrush ImageSource="emoji.png"/>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="ButChatMicrophone" Margin="691,0,10,10" Padding="0" BorderThickness="0" Height="20" VerticalAlignment="Bottom" Cursor="Hand">
+                    <Button.Background>
+                        <ImageBrush ImageSource="microphone.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>

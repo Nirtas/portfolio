@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/global.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/popup.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/auth.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/back_to_top.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/text.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/table_of_contents.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/training.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/results.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/assets/css/questions.css'>
+    <script type='text/javascript' src='/assets/js/icons.js'></script>
+    <script type='text/javascript' src='/assets/js/jquery.min.js'></script>
+    <script type='text/javascript' src='/assets/js/popup.js'></script>
+    <script type='text/javascript' src='/assets/js/auth.js'></script>
+    <script type='text/javascript' src='/assets/js/back_to_top.js'></script>
+    <script type='text/javascript' src='/assets/js/dropdown.js'></script>
+    <script type='text/javascript' src='/assets/js/table_of_contents.js'></script>
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script id="template" type="text/x-handlebars-template">
+        <div class = "final-test-task-card" id="final-test-task-card">
+            <h1 id="final-test-theme"></h1>
+            {{> task-card}}
+        </div>
+    </script>
+    <script type='text/javascript' src='/assets/js/form_test.js'></script>
+    <script type='text/javascript' src='/assets/js/click_pictures.js'></script>
+    <script type='text/javascript' src='/assets/js/get_results.js'></script>
+    <script id="question-template" type="text/x-handlebars-template">
+        {{> question}}
+    </script>
+    <script type='text/javascript' src='/assets/js/get_questions.js'></script>
+</head>

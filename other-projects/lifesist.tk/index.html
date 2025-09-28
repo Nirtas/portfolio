@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <title>Лайфсист - салон бытовой техники</title>
+    <link href="/css/index.css" rel="stylesheet">
+    <link href="/css/global.css" rel="stylesheet">
+    <script src="/js/slider.js"></script>
+</head>
+
+<body>    
+    <?php
+        $_POST['key'] = 'header';
+        include ('php/header-footer.php');
+    ?>
+
+    <main>
+        <p class="indent"></p>
+        
+        <div style="display: flex; justify-content: center; font-size: 2em;">
+            <?php
+                include ('php/countViewers.php');
+            ?>
+        </div>
+        
+        <p class="indent"></p>
+        
+        <div class="slider">
+            <div class="slider__wrapper">
+                <div class="slider__items">                    
+                    <div class="slider__item">
+                        <a href=""><img src="images/promotion1.jpg" width=1000px></a>
+                    </div>
+                    <div class="slider__item">
+                        <a href=""><img src="images/promotion2.jpg" width=1000px></a>
+                    </div>
+                    <div class="slider__item">
+                        <a href=""><img src="images/promotion3.jpg" width=1000px></a>
+                    </div>
+                    <div class="slider__item">
+                        <a href=""><img src="images/promotion4.jpg" width=1000px></a>
+                    </div>
+                    <div class="slider__item">
+                        <a href=""><img src="images/promotion5.jpg" width=1000px></a>
+                    </div>
+                    <div class="slider__item">
+                        <a href=""><img src="images/promotion6.jpg" width=1000px></a>
+                    </div>
+                    <div class="slider__item">
+                        <a href=""><img src="images/promotion7.jpg" width=1000px></a>
+                    </div>
+                    <div class="slider__item">
+                        <a href=""><img src="images/promotion8.jpg" width=1000px></a>
+                    </div>
+                </div>
+            </div>
+            <a class="slider__control slider__control_prev" href="#" role="button"></a>
+            <a class="slider__control slider__control_next" href="#" role="button"></a>
+        </div>
+
+        <p class="indent"></p>
+
+        <div class="radio_buttons">
+            <div>
+                <input type="radio" name="option" id="butNewItems" checked>
+                <label for="butNewItems">Новинки</label>
+            </div>
+            <span class="indent-elements">
+                <div>
+                    <input type="radio" name="option" id="butHotDeals">
+                    <label for="butHotDeals">Горячие предложения</label>
+                </div>
+            </span>
+            <span class="indent-elements">
+                <div>
+                    <input type="radio" name="option" id="butBestsellers">
+                    <label for="butBestsellers">Хиты продаж</label>
+                </div>
+            </span>
+        </div>
+
+        <p class="indent"></p>
+
+        <ul>
+            <div style="display:flex; flex-wrap: wrap; padding-left: 15px;">
+
+
+                <!-- Товар 1 -->
+                <li>
+                    <div class="card">
+                        <div class="img-position">
+                            <a href=""><img src="images/102938581.jpg" alt=""></a>
+                        </div>
+                        <br>
+                        <div class="name-position">
+                            <a href="">
+                                <p>холодильник двухкамерный POZIS МИР-244-1 А</p>
+                            </a>
+                        </div>
+                        <div class="price-code">
+                            <h1 class="price">18290 руб.</h1>
+                            <h2>Код товара: <u>102938581</u></h2>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- Товар 2 -->
+                <li>
+                    <div class="card">
+                        <div class="img-position">
+                            <a href="">
+                                <img src="images/102938582.jpg" alt=""></a>
+                        </div>
+                        <br>
+                        <div class="name-position">
+                            <a href="">
+                                <p>машина стиральная с фронтальной загрузкой BOSCH WLG2426FOE 5 кг</p>
+                            </a>
+                        </div>
+                        <div class="price-code">
+                            <h1 class="price">26990 руб.</h1>
+                            <h2>Код товара: <u>102938582</u></h2>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- Товар 3 -->
+                <li>
+                    <div class="card">
+                        <div class="img-position">
+                            <a href=""><img src="images/102938583.jpg" alt=""></a>
+                        </div>
+                        <br>
+                        <div class="name-position">
+                            <a href="">
+                                <p>кофеварка VITEK VT-1506 550 Вт, 0,7л</p>
+                            </a>
+                        </div>
+                        <div class="price-code">
+                            <h1 class="price">1490 руб.</h1>
+                            <h2>Код товара: <u>102938583</u></h2>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- Товар 4 -->
+                <li>
+                    <div class="card">
+                        <div class="img-position">
+                            <a href=""><img src="images/102938584.jpg" alt=""></a>
+                        </div>
+                        <br>
+                        <div class="name-position">
+                            <a href="">
+                                <p>духовой шкаф электрический HANSA BOEI68403</p>
+                            </a>
+                        </div>
+                        <div class="price-code">
+                            <h1 class="price">20290 руб.</h1>
+                            <h2>Код товара: <u>102938584</u></h2>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- Товар 5 -->
+                <li>
+                    <div class="card">
+                        <div class="img-position">
+                            <a href=""><img src="images/102938585.jpg" alt=""></a>
+                        </div>
+                        <br>
+                        <div class="name-position">
+                            <a href="">
+                                <p>печь СВЧ REDMOND RM-2002D соло 20л кноп. серебр.</p>
+                            </a>
+                        </div>
+                        <div class="price-code">
+                            <h1 class="price">6990 руб.</h1>
+                            <h2>Код товара: <u>102938585</u></h2>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- Товар 6 -->
+                <li>
+                    <div class="card">
+                        <div class="img-position">
+                            <a href=""><img src="images/102938586.jpg" alt=""></a>
+                        </div>
+                        <br>
+                        <div class="name-position">
+                            <a href="">
+                                <p>холодильник однокамерный POZIS RS-416 C</p>
+                            </a>
+                        </div>
+                        <div class="price-code">
+                            <h1 class="price">14390 руб.</h1>
+                            <h2>Код товара: <u>102938586</u></h2>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- Товар 7 -->
+                <li>
+                    <div class="card">
+                        <div class="img-position">
+                            <a href="">
+                                <img src="images/102938587.jpg" alt=""></a>
+                        </div>
+                        <br>
+                        <div class="name-position">
+                            <a href="">
+                                <p>плита электрическая HANSA FCCX58277 4 конфорки, 50x60 см</p>
+                            </a>
+                        </div>
+                        <div class="price-code">
+                            <h1 class="price">30990 руб.</h1>
+                            <h2>Код товара: <u>102938587</u></h2>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- Товар 8 -->
+                <li>
+                    <div class="card">
+                        <div class="img-position">
+                            <a href=""><img src="images/102938588.jpg" alt=""></a>
+                        </div>
+                        <br>
+                        <div class="name-position">
+                            <a href="">
+                                <p>духовой шкаф электрический HP-ARISTON 70FD610MR RU/HA</p>
+                            </a>
+                        </div>
+                        <div class="price-code">
+                            <h1 class="price">18590 руб.</h1>
+                            <h2>Код товара: <u>102938588</u></h2>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- Товар 9 -->
+                <li>
+                    <div class="card">
+                        <div class="img-position">
+                            <a href=""><img src="images/102938589.jpg" alt=""></a>
+                        </div>
+                        <br>
+                        <div class="name-position">
+                            <a href="">
+                                <p>печь СВЧ REDMOND RM-2001 соло 20л мех. черн.</p>
+                            </a>
+                        </div>
+                        <div class="price-code">
+                            <h1 class="price">5990 руб.</h1>
+                            <h2>Код товара: <u>102938589</u></h2>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- Товар 10 -->
+                <li>
+                    <div class="card">
+                        <div class="img-position">
+                            <a href=""><img src="images/102938590.jpg" alt=""></a>
+                        </div>
+                        <br>
+                        <div class="name-position">
+                            <a href="">
+                                <p>холодильник двухкамерный LIEBHERR CNEF 4815-20</p>
+                            </a>
+                        </div>
+                        <div class="price-code">
+                            <h1 class="price">78690 руб.</h1>
+                            <h2>Код товара: <u>102938590</u></h2>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+
+            </div>
+        </ul>
+
+        <p class="indent"></p>
+        <p class="indent"></p>
+    </main>
+
+    <?php
+        $_POST['key'] = 'footer';
+        include ('php/header-footer.php');
+    ?>
+
+</body></html>

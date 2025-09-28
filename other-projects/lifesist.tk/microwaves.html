@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link href="css/global.css" rel="stylesheet">
+    <link href="css/listItems.css" rel="stylesheet">
+    <title>Микроволновые печи</title>
+    <script src="js/icons.js"></script>
+    <script src='/js/jquery.min.js'></script>
+    <script src="js/countItems.js"></script>
+</head>
+
+<body>
+    <?php
+        $_POST['key'] = 'header';
+        include ('php/header-footer.php');
+    ?>
+
+    <main>
+        <h1>Микроволновые печи</h1>
+        <p class="indent"></p>
+        <div style="display: flex;">
+            <div class="sidebar">
+                <form action="" name="filters">
+                    <ul>Марка
+                        <li><input type="checkbox" name="brand" value="brand1">REDMOND</li>
+                        <li><input type="checkbox" name="brand" value="brand2">PANASONIC</li>
+                        <li><input type="checkbox" name="brand" value="brand3">MAUNFELD</li>
+                        <li><input type="checkbox" name="brand" value="brand4">LG</li>
+                    </ul>
+                    <ul>Страна-производитель
+                        <li><input type="checkbox" name="country" value="country1">Беларусь</li>
+                        <li><input type="checkbox" name="country" value="country2">Китай</li>
+                    </ul>
+                    Цена, руб.
+                    <p>
+                    <input type="text" id="minprice" placeholder="От">
+                    <input type="text" id="maxprice" placeholder="До">
+                    <p>
+                    Мощность (Вт)
+                    <p>
+                    <input type="text" id="minPower" placeholder="От">
+                    <input type="text" id="maxPower" placeholder="До">
+                    <ul>Тип управления
+                        <li><input type="checkbox" name="controlType" value="controlType1">механическое</li>
+                        <li><input type="checkbox" name="controlType" value="controlType2">электронное</li>
+                        <li><input type="checkbox" name="controlType" value="controlType3">сенсорное</li>
+                    </ul>
+                    Объем (л)
+                    <p>
+                    <input type="text" id="minVolume" placeholder="От">
+                    <input type="text" id="maxVolume" placeholder="До">
+                    <p>
+                    <ul>Гриль
+                        <li><input type="checkbox" name="grill" value="grill1">нет</li>
+                        <li><input type="checkbox" name="grill" value="grill2">есть</li>
+                    </ul>
+                    <ul>Конвекция
+                        <li><input type="checkbox" name="convection" value="convection1">нет</li>
+                        <li><input type="checkbox" name="convection" value="convection2">есть</li>
+                    </ul>
+                    <ul>Переключатели
+                        <li><input type="checkbox" name="switches" value="switches1">поворотные</li>
+                        <li><input type="checkbox" name="switches" value="switches2">поворотные/кнопочные</li>
+                        <li><input type="checkbox" name="switches" value="switches3">сенсорные</li>
+                        <li><input type="checkbox" name="switches" value="switches4">кнопочные</li>
+                    </ul>
+                    <ul>Гарантия
+                        <li><input type="checkbox" name="warranty" value="warranty1">1 год</li>
+                        <li><input type="checkbox" name="warranty" value="warranty2">2 года</li>
+                        <li><input type="checkbox" name="warranty" value="warranty3">3 года</li>
+                    </ul>
+                    <p>
+                    <input type="button" value="Показать" id="showFilters">
+                    <input type="reset" id="resetFilters">
+                </form>
+            </div>
+            <div class="content">
+                <ul>
+                    <?php
+                        include ('php/s.php')
+                    ?>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <p class="indent"></p>
+    <p class="indent"></p>
+
+    <?php
+        $_POST['key'] = 'footer';
+        include ('php/header-footer.php');
+    ?>
+
+</body></html>

@@ -1,0 +1,218 @@
+.item {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item p {
+    line-height: 1.2;
+}
+
+.item-img {
+    padding: 10px;
+    max-width: 35%;
+    text-align: center;
+}
+
+.item-img img {
+    width: 100%;
+    height: 70%;
+}
+
+.item-img p {
+    font-weight: 1;
+}
+
+.item-name-price {
+    width: 60%;
+}
+
+.item-name {
+    padding: 10px;
+    font-size: 1.2em;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.item-price {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+    border-radius: 20px;
+    display: flex;
+}
+
+.price {
+    padding: 10px 0px 10px 35px;
+    font-size: 2em;
+    width: 50%;
+}
+
+.bonuses {
+    width: 50%;
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 35px;
+    font-size: 1.4em;
+    line-height: 1.2;
+    color: orangered;
+}
+
+.bonuses A {
+    color: black;
+    text-decoration: underline;
+}
+
+.bonuses A:hover {
+    text-decoration: none;
+    color: black;
+}
+
+#countItem {
+    width: 30px;
+    margin-left: -5px;
+    margin-right: -5px;
+    text-align: center;
+}
+
+.buy {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-color: #FFFFFF;
+    border-radius: 10px;
+    background: #65CB5B;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.buy:hover {
+    border-color: #65CB5B;
+    background: #FFFFFF;
+    color: #65CB5B;
+}
+
+.radio_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.radio_buttons input {
+    display: none;
+}
+
+.radio_buttons label {
+    display: block;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+    background: #FFFFFF;
+    color: #65CB5B;
+    font-size: 1.4em;
+}
+
+.radio_buttons input:checked + label {
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+    border-color: #65CB5B;
+    background: #65CB5B;
+    color: #FFFFFF;
+}
+
+table {
+    margin-left: 25px;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+}
+
+tr:hover td {
+    color: red;
+}
+
+.review-card {
+    flex-wrap: wrap;
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.img-review-card {
+    text-align: center;
+    width: 15%;
+}
+
+.img-review-card img {
+    width: 50%;
+    margin-top: 10px;
+    border: 5px solid white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+}
+
+.name-review-card {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0 20px 10px;
+    width: 80%;
+    text-align: justify;
+}
+
+.review_stars_wrap {
+    overflow: hidden;
+}
+
+#review_stars {
+    overflow: hidden;
+    position: relative;
+}
+
+#review_stars input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+#review_stars input ~ label i {
+    color: #ccc;
+}
+
+#review_stars input:checked ~ label i {
+    color: #ec9801;
+}
+
+#review_stars label {
+    float: right;
+    position: relative;
+    z-index: 1;
+}
+
+#butAddReview {
+    border-color: #FFFFFF;
+    border-radius: 10px;
+    background: #65CB5B;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 1.4em;
+    margin-top: 10px;
+}
+
+#butAddReview:hover {
+    border-color: #65CB5B;
+    background: #FFFFFF;
+    color: #65CB5B;
+}
+
+.message-review {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 410px;
+    justify-content: center;
+}

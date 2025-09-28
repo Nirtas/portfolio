@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stt-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stt
+  template:
+    metadata:
+      labels:
+        app: stt
+    spec:
+      imagePullSecrets:
+      - name: gitlab-registry-secret
+      containers:
+      - name: stt
+        image: git.codenrock.com:5050/it-one-cup-ml-challenge-1388/cnrprod1744452199-team-84334/sistema-postroeniya-diagramm/stt:feat-qpsk-17-0a795bab
+        ports:
+        - containerPort: 6000
+        env:
+          - name: STT_PORT
+            value: "6000"
+          - name: WHISPER_MODEL_SIZE
+            value: "small"

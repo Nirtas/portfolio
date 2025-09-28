@@ -1,0 +1,161 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:17.4
+    container_name: ${CONTAINER_NAME_PREFIX}_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data_local:/var/lib/postgresql/data
+      - ./database-init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - app-network
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+
+  llm-app:
+    build:
+      context: ./llm
+    container_name: ${CONTAINER_NAME_PREFIX}_llm
+    expose:
+      - ${LLM_PORT}
+    environment:
+      MODEL_FILE_PATH: ${HF_MODEL_FILE_PATH}
+      LLM_PORT: ${LLM_PORT}
+      OLLAMA_MODEL_NAME: ${OLLAMA_MODEL_NAME}
+      OLLAMA_CONTAINER_NAME: ${CONTAINER_NAME_PREFIX}_ollama
+    volumes:
+      - model-storage:${MODEL_FOLDER}
+      - ./llm:/app
+    depends_on:
+      - ollama
+    networks:
+      - app-network
+
+  ollama:
+    build:
+      context: ./ollama
+      dockerfile: Dockerfile
+    container_name: ${CONTAINER_NAME_PREFIX}_ollama
+    expose:
+      - "11434"
+    networks:
+      - app-network
+    volumes:
+      - ./ollama:/app
+      - model-storage:${MODEL_FOLDER}
+      - ollama-data:/root/.ollama
+    environment:
+      GGUF_FILE: ${HF_MODEL_FILE}
+      OLLAMA_MODEL_NAME: ${OLLAMA_MODEL_NAME}
+      HF_MODEL_FILE_PATH: ${HF_MODEL_FILE_PATH}
+      HF_MODEL_REPO: ${HF_MODEL_REPO}
+      HF_MODEL_FILE: ${HF_MODEL_FILE}
+      MODEL_PATH_IN_CONTAINER: ${MODEL_FOLDER}
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+
+  stt:
+    build:
+      context: ./stt
+    container_name: ${CONTAINER_NAME_PREFIX}_stt
+    restart: unless-stopped
+    volumes:
+      - ./stt:/app
+      - ./stt/gunicorn_conf.py:/app/gunicorn_conf.py
+    expose:
+      - ${STT_PORT}
+    environment:
+      WHISPER_MODEL_SIZE: ${WHISPER_MODEL_SIZE}
+      STT_PORT: ${STT_PORT}
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend
+    container_name: ${CONTAINER_NAME_PREFIX}_backend
+    restart: unless-stopped
+    depends_on:
+      - db
+      - stt
+      - llm-app
+      - ollama
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+      DB_HOST: ${DB_HOST}
+      DB_PORT: ${DB_PORT}
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY}
+      PYTHONUNBUFFERED: 1
+      FLASK_ENV: development
+      GUNICORN_RELOAD: "true"
+      STT_HOSTNAME: stt
+      STT_PORT: ${STT_PORT}
+      BACKEND_PORT: ${BACKEND_PORT}
+      PERSISTENT_STORAGE_PATH: /persistent_data
+      LLM_PORT: ${LLM_PORT}
+      LLM_HOSTNAME: llm-app
+    expose:
+      - ${BACKEND_PORT}
+    volumes:
+      - ./backend:/app
+      - ./backend/gunicorn_conf.py:/app/gunicorn_conf.py
+      - backend_chat_data_local:/persistent_data
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: ${CONTAINER_NAME_PREFIX}_frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+    networks:
+      - app-network
+    environment:
+      BACKEND_HOSTNAME: backend
+      BACKEND_PORT: ${BACKEND_PORT}
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: ${CONTAINER_NAME_PREFIX}_pgadmin
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    volumes:
+      - pgadmin_data_local:/var/lib/pgadmin
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+volumes:
+  postgres_data_local:
+  pgadmin_data_local:
+  backend_chat_data_local:
+  model-storage:
+    driver: local
+  ollama-data:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
+    name: ${CONTAINER_NAME_PREFIX}_network

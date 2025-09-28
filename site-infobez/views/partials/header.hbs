@@ -1,0 +1,27 @@
+<div class='menu'>
+    <div class='logo'>
+        <a href='/'><img src='/assets/images/logo.png'></a>
+    </div>
+
+    <div class='nav'>
+        <ul>
+            <li id="theory">
+                <button class="dropbtn" onclick="DropdownVisible()">
+                    ТЕОРИЯ
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdown">
+                    <a href="/caesar">Шифр Цезаря</a>
+                    <a href="/vigenere">Шифр Виженера</a>
+                    <a href="/playfair">Шифр Плейфера</a>
+                    <a href="/vernam">Шифр Вернама</a>
+                </div>
+            </li>
+            <li id="check-login"></li>
+        </ul>
+    </div>
+</div>
+
+{{> popup_auth}}
+
+{{> popup_message}}

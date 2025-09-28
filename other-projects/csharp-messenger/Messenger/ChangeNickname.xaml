@@ -1,0 +1,14 @@
+﻿<Window x:Class="Messenger.ChangeNickname"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Messenger"
+        mc:Ignorable="d"
+        Title="Messenger" Height="187.055" Width="251.777" FontFamily="Verdana" FontSize="14" Icon="messenger.png" ResizeMode="NoResize">
+    <Grid>
+        <TextBlock TextAlignment="Center" Text="Введите новый ник и нажмите ОК" Margin="0,16,34,0" TextWrapping="Wrap" HorizontalAlignment="Right" Width="178" Height="36" VerticalAlignment="Top"/>
+        <TextBox x:Name="TbNewNickname" Margin="0,72,34,0" HorizontalAlignment="Right" Width="178" Height="20" VerticalAlignment="Top" TextChanged="TbNewNickname_TextChanged" MaxLength="50"/>
+        <Button x:Name="ButChangeNicknameOK" Content="ОК" Margin="0,115,98,0" HorizontalAlignment="Right" Width="50" Height="20" VerticalAlignment="Top" IsEnabled="False" Click="ButChangeNicknameOK_Click"/>
+    </Grid>
+</Window>

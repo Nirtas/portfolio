@@ -1,0 +1,35 @@
+﻿<Window x:Class="Messenger.Auth"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Messenger"
+        mc:Ignorable="d"
+        Title="Messenger" Height="500" Width="350" FontFamily="Verdana" Icon="messenger.png" ResizeMode="NoResize" Closing="Window_Closing">
+    <Grid>
+        <Grid x:Name="GridAuthWelcome" Height="160" VerticalAlignment="Top">
+            <Image x:Name="ImAuthMessengerIcon" Source="messenger-big.png" Margin="0,30,137,0" Height="71" VerticalAlignment="Top" HorizontalAlignment="Right" Width="71"/>
+            <TextBlock x:Name="TbkWelcome" Text="Добро пожаловать в Messenger" Margin="0,111,85,0" TextWrapping="Wrap" TextAlignment="Center" Height="39" VerticalAlignment="Top" FontSize="16" HorizontalAlignment="Right" Width="175"/>
+
+            <Image x:Name="ImAuthRegIcon" Source="email.png" Margin="0,35,137,0" HorizontalAlignment="Right" Width="71" Height="71" VerticalAlignment="Top" Visibility="Hidden"/>
+            <TextBlock x:Name="TbkAuthReg" Text="Введите адрес электронной почты" Margin="0,111,70,0" TextWrapping="Wrap" TextAlignment="Center" Height="39" VerticalAlignment="Top" HorizontalAlignment="Right" Width="204" FontSize="16" Visibility="Hidden"/>
+        </Grid>
+        <Grid x:Name="GridAuthForm" Margin="0,160,0,0">
+            <TextBlock x:Name="TbkAuthUsername" Text="Имя пользователя" TextAlignment="Center" Margin="0,43,84,0" FontSize="16" Height="23" VerticalAlignment="Top" HorizontalAlignment="Right" Width="176"/>
+            <TextBox x:Name="TbAuthUsername" Margin="0,71,84,0" TextChanged="TbAuthUsername_TextChanged" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="176" PreviewKeyDown="TbAuth_PreviewKeyDown" LostFocus="TbAuth_LostFocus" MaxLength="50"/>
+            <TextBlock x:Name="TbkAuthPassword" Text="Пароль" TextAlignment="Center" Margin="0,104,94,0" FontSize="16" Height="23" VerticalAlignment="Top" HorizontalAlignment="Right" Width="157"/>
+            <PasswordBox x:Name="PbAuthPassword" Margin="0,132,84,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="176" PasswordChanged="TbAuthPassword_PasswordChanged"/>
+            <Button x:Name="ButAuthNext" Margin="0,233,130,0" Content="Далее" IsEnabled="False" Height="25" VerticalAlignment="Top" Click="ButAuthNext_Click" HorizontalAlignment="Right" Width="84"/>
+
+            <TextBox x:Name="TbAuthEmail" Margin="0,23,84,0" HorizontalAlignment="Right" Width="176" Height="20" VerticalAlignment="Top" Visibility="Hidden" TextChanged="TbAuthEmail_TextChanged" PreviewKeyDown="TbAuth_PreviewKeyDown" LostFocus="TbAuth_LostFocus" MaxLength="50"/>
+            <Button x:Name="ButAuthSendCode" Content="Подтвердить" Margin="0,50,106,0" IsEnabled="False" Height="19" VerticalAlignment="Top" HorizontalAlignment="Right" Width="132" Visibility="Hidden" Click="ButAuthSendCode_Click"/>
+            <TextBlock x:Name="TbkAuthCode" Text="Введите код из письма" TextAlignment="Center" Margin="0,91,84,0" HorizontalAlignment="Right" Width="176" Height="18" VerticalAlignment="Top" Visibility="Hidden"/>
+            <TextBox x:Name="TbAuthCode" Margin="0,109,84,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="176" Visibility="Hidden" TextChanged="TbAuthCode_TextChanged"/>
+            <TextBlock x:Name="TbkAuthRegCodeTime" Text="Повторная отправка письма возможна через 60 сек." Margin="0,155,84,0" TextWrapping="Wrap" TextAlignment="Center" Height="33" VerticalAlignment="Top" HorizontalAlignment="Right" Width="176" Visibility="Hidden"/>
+            <Button x:Name="ButAuthBack" Content="Назад" Margin="0,233,205,0" HorizontalAlignment="Right" Width="55" Height="25" VerticalAlignment="Top" Click="ButAuthBack_Click" Visibility="Hidden"/>
+            <Button x:Name="ButAuthFinish" Content="Далее" Margin="0,233,84,0" HorizontalAlignment="Right" Width="56" Height="25" VerticalAlignment="Top" Click="ButAuthFinish_Click" Visibility="Hidden" IsEnabled="False"/>
+        </Grid>
+
+
+    </Grid>
+</Window>

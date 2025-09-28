@@ -1,0 +1,35 @@
+<div class="text">
+    <h1>Результаты тестирований</h1>
+
+    <p>Просматривайте результаты тестирований студентов с помощью фильтров.</p>
+
+    <form action="/get-results-from-db" method="post" id="form-results-filter">
+        <div class="results-filter">
+            <div style="margin-right: 5em">
+                <p>Студент:<br>
+                    <select name="student"></select>
+                </p>
+
+                <p>Вариант:&nbsp;
+                    <select name="variant"></select>
+                </p>
+            </div>
+
+            <div>
+                <p>Дата сдачи задания:<br>
+                    От:&nbsp;<input type="datetime-local" min="2010-01-01T00:00" max="2040-01-01T00:00" value="2010-01-01T00:00" name="date-min" onchange="CheckDate()">
+                    <input type="button" value="Сбросить" name="date-min-reset" onclick="ResetDateTime(name)"><br>
+                    До:&nbsp;<input type="datetime-local" min="2010-01-01T00:00" max="2040-01-01T00:00" value="2040-01-01T00:00" name="date-max" onchange="CheckDate()">
+                    <input type="button" value="Сбросить" name="date-max-reset" onclick="ResetDateTime(name)">
+                </p>
+            </div>
+
+        </div>
+
+        <p>
+            <input type="submit" value="Применить">
+        </p>
+    </form>
+
+</div>
+

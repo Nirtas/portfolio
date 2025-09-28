@@ -1,0 +1,92 @@
+<resources>
+    <!--  Global  -->
+    <string name="changes_toast_empty_required_fields">必須フィールドに入力します</string>
+    <string name="changes_toast_spaces_in_inputs">フィールドにスペースを含めることはできません</string>
+    <string name="changes_toast_successful_update">データが更新されました</string>
+    <string name="layout_default_text_user_name">ユーザー名</string>
+
+    <!--  Registration  -->
+    <string name="registration_phone_label">電話番号を入力してください</string>
+    <string name="registration_phone_hint">電話番号</string>
+    <string name="registration_title_phone_enter">電話番号を入力します</string>
+    <string name="registration_confirm_phone_label">SMSからコードを入力します</string>
+    <string name="registration_toast_empty_phone">電話番号を入力してください</string>
+
+    <!--  Chats  -->
+    <string name="chat_action_menu_clear_chat">チャットをクリアします</string>
+    <string name="chat_toast_chat_cleared">チャットはクリアされました</string>
+    <string name="chat_action_menu_delete_chat">チャットを削除します</string>
+    <string name="chat_toast_chat_deleted">チャットは削除されました</string>
+    <string name="chat_message_empty_input">メッセージを入力してください</string>
+    <string name="chat_toast_message_deleted">メッセージが削除されました</string>
+    <string name="chat_toast_message_changed">メッセージが変更されました</string>
+    <string name="chat_input_message_hint">メッセージ</string>
+    <string name="chat_input_message_recording">記録</string>
+    <string name="chat_message_default_text">メッセージ</string>
+
+    <!--  Bottom Navigation  -->
+    <string name="bottom_navigation_item_settings">設定</string>
+    <string name="bottom_navigation_item_main_list">チャット</string>
+    <string name="bottom_navigation_item_contacts">連絡先</string>
+
+    <!--  Settings  -->
+    <string name="settings_title">設定</string>
+    <string name="settings_label_account">アカウント</string>
+    <string name="settings_account_label_phone_number">電話番号</string>
+    <string name="settings_account_label_login">ログイン</string>
+    <string name="settings_account_additional_info">自分自身について</string>
+    <string name="settings_account_label_additional_info">追加情報</string>
+    <string name="settings_action_menu_exit">出力</string>
+    <string name="settings_action_menu_change_fullname">名前を変更します</string>
+    <string name="settings_action_menu_change_user_photo">アバターを変更します</string>
+    <string name="settings_label_other">その他</string>
+    <string name="settings_other_theme_switcher_text">暗いテーマ</string>
+    <string name="settings_other_theme_switcher_sub_text">ダークテーマをオンにします</string>
+    <string name="settings_label_theme_changed">すごい！</string>
+
+    <!--  Change fullname  -->
+    <string name="change_fullname_title">名前</string>
+    <string name="change_fullname_enter_name_hint">名前（必須）</string>
+    <string name="change_fullname_enter_surname_hint">姓（オプション）</string>
+
+    <!--  Change login  -->
+    <string name="change_login_title">ログイン</string>
+    <string name="change_login_enter_login_hint">ログイン（必須）</string>
+    <string name="change_login_toast_login_already_in_use">ログインはすでに使用されています。別のログインを試してください</string>
+
+    <!--  Change user info  -->
+    <string name="change_user_info_title">自分自身について</string>
+    <string name="change_user_info_user_info_hint">追加情報（オプション）</string>
+
+    <!--  Groups  -->
+    <string name="group_settings_name_hint">グループ名（必須）</string>
+    <string name="group_settings_label_users">ユーザーのリスト</string>
+    <string name="group_add_user_title">ユーザーを追加します</string>
+    <string name="group_add_user_toast_no_users">メンバーなしでグループを作成することはできません</string>
+    <string name="group_action_menu_exit">グループを脱退します</string>
+    <string name="group_toast_left_group">あなたはグループを去りました</string>
+    <string name="group_settings_title">グループ設定</string>
+    <string name="group_settings_toast_choose_pic">写真を選ぶ</string>
+    <string name="create_group">グループを作成します</string>
+
+    <!--  Main List  -->
+    <string name="main_list_last_message_image">画像</string>
+    <string name="main_list_last_message_file">ファイル</string>
+    <string name="main_list_last_message_voice">音声メッセージ</string>
+    <string name="main_list_last_message_sender_me">君は</string>
+    <string name="main_list_last_message_no_messages">メッセージはありません</string>
+    <string name="main_list_last_message_default_text">最後のメッセージ</string>
+    <string name="main_list_title">チャット</string>
+
+    <!--  Contacts  -->
+    <string name="contacts_title">連絡先</string>
+
+    <!--  Alert Dialogs  -->
+    <string name="alert_dialog_delete_message_title">メッセージを削除します</string>
+    <string name="alert_dialog_delete_message_content">このメッセージを削除してもよろしいですか？</string>
+    <string name="alert_dialog_button_delete">削除します</string>
+    <string name="alert_dialog_button_cancel">キャンセル</string>
+    <string name="alert_dialog_edit_message_title">メッセージの編集</string>
+    <string name="alert_dialog_button_save">セーブ</string>
+
+</resources>

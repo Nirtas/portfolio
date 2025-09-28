@@ -1,0 +1,21 @@
+.results-filter {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+select,
+input {
+    font-size: 1em;
+}
+
+#results-table {
+    border-spacing: 0;
+    border: 1px solid black;
+}
+
+#results-table td {
+    border: 1px solid black;
+    font-style: normal;
+    text-align: center;
+}
+

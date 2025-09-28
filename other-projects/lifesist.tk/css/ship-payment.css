@@ -1,0 +1,58 @@
+.text {
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify;
+}
+
+.text li {
+    list-style: disc;
+}
+
+.text ul {
+    padding-left: 75px;
+}
+
+.text p {
+    margin-bottom: -5px;
+}
+
+.text A {
+    color: black;
+    text-decoration: underline;
+}
+
+.text A:hover {
+    text-decoration: none;
+    color: black;
+}
+
+center b {
+    font-size: 1.5em;
+}
+
+table {
+    font-size: 14px;
+    max-width: 70%;
+    width: 70%;
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid black;
+}
+
+th {
+    border: 1px solid black;
+    padding: 10px 8px;
+}
+
+td {
+    border: 1px solid gray;
+    padding: 9px 8px;
+}
+
+tr:hover td {
+    color: red;
+}
+
+red {
+    color: red;
+}

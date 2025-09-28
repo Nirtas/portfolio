@@ -1,0 +1,41 @@
+.catalog-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+    border-radius: 20px;
+    max-width: 10em;
+    min-height: 14em;
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+}
+
+.catalog-card A {
+    color: black;
+    text-decoration: underline;
+}
+
+.catalog-card A:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.catalog-card img {
+    width: 75%;
+    height: 75%;
+}
+
+.catalog-card:hover img {
+    transform: scale(1.05);
+}
+
+.catalog-card-img-position {
+    position: relative;
+    top: 5px;
+    flex-wrap: wrap;
+}
+
+.catalog-card-name-position {
+    position: relative;
+    padding-top: 25px;
+    text-align: center;
+}

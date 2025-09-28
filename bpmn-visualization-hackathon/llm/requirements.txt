@@ -1,0 +1,11 @@
+Flask==2.3.2
+numpy==1.26.2
+gunicorn==23.0.0
+huggingface_hub==0.30.2
+dotenv==0.9.9
+langchain-core==0.3.56
+pydantic==2.11.3
+typing==3.7.4.3
+langchain-ollama==0.3.2
+langchain==0.3.24
+ollama==0.4.8

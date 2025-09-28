@@ -1,0 +1,200 @@
+.frame {
+    height: 450px;
+    width: 430px;
+    background: #65CB5B;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: solid 1px rgba(255, 255, 255, .5);
+    border-radius: 5px;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.frame-long {
+    height: 530px;
+}
+
+.nav {
+    width: 100%;
+    height: 100px;
+    padding-top: 20px;
+    margin-left: -20px;
+    opacity: 1;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.signin-active a,
+.signup-active a {
+    padding-bottom: 5px;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: solid 2px #FFFFFF;
+    cursor: pointer;
+}
+
+.signin-active,
+.signin-inactive,
+.signup-active,
+.signup-inactive {
+    padding-left: 10px;
+    font-size: 18px;
+    display: inline;
+    text-align: left;
+    text-transform: uppercase;
+    padding-right: 10px;
+    color: #ffffff;
+}
+
+.signin-inactive a {
+    color: #FFFFFF;
+    text-decoration: none;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.signup-inactive a {
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.form-signin {
+    width: 430px;
+    height: 375px;
+    font-size: 16px;
+    font-weight: 300;
+    padding-left: 20px;
+    padding-right: 20px;
+    -webkit-transition: opacity .5s ease, -webkit-transform .5s ease;
+    transition: opacity .5s ease, -webkit-transform .5s ease;
+    transition: opacity .5s ease, transform .5s ease;
+    transition: opacity .5s ease, transform .5s ease, -webkit-transform .5s ease;
+}
+
+.form-signin-left {
+    -webkit-transform: translateX(-400px);
+    transform: translateX(-400px);
+    opacity: .0;
+}
+
+.form-signup {
+    width: 430px;
+    height: 375px;
+    font-size: 16px;
+    font-weight: 300;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    top: -375px;
+    left: 400px;
+    opacity: 0;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.form-signup-left {
+    -webkit-transform: translateX(-399px);
+    transform: translateX(-399px);
+    opacity: 1;
+}
+
+.form-styling {
+    width: 90%;
+    height: 35px;
+    color: #FFFFFF;
+    text-indent: 15px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, .2);
+}
+
+.labels {
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    color: white;
+    display: block;
+}
+
+.btn-signup {
+    float: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: #65CB5B;
+    width: 90%;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 23px;
+    background-color: #FFFFFF;
+}
+
+.btn-signin {
+    float: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: #65CB5B;
+    width: 90%;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 23px;
+    background-color: #FFFFFF;
+}
+
+.btn-signup:hover,
+.btn-signin:hover {
+    cursor: pointer;
+    background-color: #65CB5B;
+    color: #FFFFFF;
+    border: 2px solid white;
+    -webkit-transition: background-color .5s;
+    transition: background-color .5s;
+}
+
+.forgot {
+    height: 100px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 24px;
+    margin-top: -480px;
+    border-top: solid 1px white;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.forgot-left {
+    -webkit-transform: translateX(-400px);
+    transform: translateX(-400px);
+    opacity: 0;
+}
+
+.forgot-fade {
+    opacity: 0;
+}
+
+.forgot a {
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.message {
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid red;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 410px;
+}

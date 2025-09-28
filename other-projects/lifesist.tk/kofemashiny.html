@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link href="css/global.css" rel="stylesheet">
+    <link href="css/listItems.css" rel="stylesheet">
+    <title>Кофемашины</title>
+    <script src='/js/jquery.min.js'></script>
+    <script src="/js/countItems.js"></script>
+</head>
+
+<body>
+   
+    <?php
+        $_POST['key'] = 'header';
+        include ('php/header-footer.php');
+    ?>
+
+    <main>
+        <h1>Кофемашины</h1>
+        <p class="indent"></p>
+        <div style="display: flex;">
+            <div class="sidebar">
+                <form action="" name="filters">
+                    <ul>Марка
+                        <li><input type="checkbox" name="brand" value="brand1">DELONGHI</li>
+                        <li><input type="checkbox" name="brand" value="brand2">NIVONA</li>
+                        <li><input type="checkbox" name="brand" value="brand3">PHILIPS</li>
+                    </ul>
+                    <ul>Страна-производитель
+                        <li><input type="checkbox" name="country" value="country1">Италия</li>
+                        <li><input type="checkbox" name="country" value="country2">Румыния</li>
+                        <li><input type="checkbox" name="country" value="country3">Швейцария</li>
+                    </ul>
+                    Цена, руб.
+                    <p>
+                    <input type="text" id="minprice" placeholder="От">
+                    <input type="text" id="maxprice" placeholder="До">
+                    <p>
+                    Объем резервуара для воды, мл
+                    <p>
+                    <input type="text" id="minvolume" placeholder="От">
+                    <input type="text" id="maxvolume" placeholder="До">
+                    <p>
+                    <ul>Гарантия
+                        <li><input type="checkbox" name="warranty" value="warranty1">1 год</li>
+                        <li><input type="checkbox" name="warranty" value="warranty2">2 года</li>
+                        <li><input type="checkbox" name="warranty" value="warranty3">5 лет</li>
+                    </ul>
+                    <ul>Подогрев чашек
+                        <li><input type="checkbox" name="cupWarmer" value="cupWarmer1">есть</li>
+                        <li><input type="checkbox" name="cupWarmer" value="cupWarmer2">нет</li>
+                    </ul>
+                    <ul>Тип используемого кофе
+                        <li><input type="checkbox" name="coffeeType" value="coffeType1">зерновой</li>
+                        <li><input type="checkbox" name="coffeeType" value="coffeeType2">молотый</li>
+                    </ul>
+                    <ul>Капучинатор
+                        <li><input type="checkbox" name="cappMaker" value="cappMaker1">нет</li>
+                        <li><input type="checkbox" name="cappMaker" value="cappMaker2">автоматический</li>
+                        <li><input type="checkbox" name="cappMaker" value="cappMaker3">ручной</li>
+                    </ul>
+                    <p>
+                    <input type="button" value="Показать" id="showFilters">
+                    <input type="reset" id="resetFilters">
+                </form>
+            </div>
+
+            <div class="content">
+                <ul>
+                    <?php
+                        include ('php/s.php');
+                    ?>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <p class="indent"></p>
+    <p class="indent"></p>
+
+    <?php
+        $_POST['key'] = 'footer';
+        include ('php/header-footer.php');
+    ?>
+
+</body></html>

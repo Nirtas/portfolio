@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link href="css/catalog.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <title>Холодильники</title>
+    <script src="js/icons.js"></script>
+    <script src='/js/jquery.min.js'></script>
+</head>
+
+<body>
+    <?php
+        $_POST['key'] = 'header';
+        include ('php/header-footer.php');
+    ?>
+
+    <main>
+        <h1>Холодильники</h1>
+
+        <p class="indent"></p>
+
+        <ul>
+            <div style="display:flex; flex-wrap: wrap; padding-left: 15px;">
+
+                <!-- Категория 1 -->
+                <li>
+                    <div class="catalog-card">
+                        <div class="catalog-card-img-position">
+                            <a href="odnokamer-kholodilniki.html"><img src="images/category-odnokamer-kholodilniki.jpg" alt=""></a>
+                        </div>
+                        <div class="catalog-card-name-position">
+                            <a href="odnokamer-kholodilniki.html">Холодильники однокамерные</a>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Категория 2 -->
+                <li>
+                    <div class="catalog-card">
+                        <div class="catalog-card-img-position">
+                            <a href=""><img src="images/category-dvuhkamer-kholodilniki.jpg" alt=""></a>
+                        </div>
+                        <div class="catalog-card-name-position">
+                            <a href="">Холодильники двухкамерные</a>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Категория 3 -->
+                <li>
+                    <div class="catalog-card">
+                        <div class="catalog-card-img-position">
+                            <a href=""><img src="images/category-moroz-kamer.jpg" alt=""></a>
+                        </div>
+                        <div class="catalog-card-name-position">
+                            <a href="">Морозильные камеры</a>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Категория 4 -->
+                <li>
+                    <div class="catalog-card">
+                        <div class="catalog-card-img-position">
+                            <a href=""><img src="images/category-moroz-lari.jpg" alt=""></a>
+                        </div>
+                        <div class="catalog-card-name-position">
+                            <a href="">Морозильные лари</a>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Категория 5 -->
+                <li>
+                    <div class="catalog-card">
+                        <div class="catalog-card-img-position">
+                            <a href=""><img src="images/category-vin-shkafy.jpg" alt=""></a>
+                        </div>
+                        <div class="catalog-card-name-position">
+                            <a href="">Винные шкафы</a>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Категория 6 -->
+                <li>
+                    <div class="catalog-card">
+                        <div class="catalog-card-img-position">
+                            <a href=""><img src="images/category-poglot-zapah-kholodilniki.jpg" alt=""></a>
+                        </div>
+                        <div class="catalog-card-name-position">
+                            <a href="">Поглотители запаха для холодильников</a>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+                
+
+            </div>
+        </ul>
+    </main>
+
+    <p class="indent"></p>
+    <p class="indent"></p>
+
+    <?php
+        $_POST['key'] = 'footer';
+        include ('php/header-footer.php');
+    ?>
+
+</body></html>

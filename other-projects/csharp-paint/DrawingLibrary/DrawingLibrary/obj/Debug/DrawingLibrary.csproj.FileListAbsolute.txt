@@ -1,0 +1,6 @@
+C:\Users\Sil\Desktop\C#\Кроян\CoolProgramm\DrawingLibrary\DrawingLibrary\obj\Debug\DrawingLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Sil\Desktop\C#\Кроян\CoolProgramm\DrawingLibrary\DrawingLibrary\bin\Debug\DrawingLibrary.dll
+C:\Users\Sil\Desktop\C#\Кроян\CoolProgramm\DrawingLibrary\DrawingLibrary\bin\Debug\DrawingLibrary.pdb
+C:\Users\Sil\Desktop\C#\Кроян\CoolProgramm\DrawingLibrary\DrawingLibrary\obj\Debug\DrawingLibrary.dll
+C:\Users\Sil\Desktop\C#\Кроян\CoolProgramm\DrawingLibrary\DrawingLibrary\obj\Debug\DrawingLibrary.pdb
+C:\Users\Sil\Desktop\C#\Кроян\CoolProgramm\DrawingLibrary\DrawingLibrary\obj\Debug\DrawingLibrary.csprojAssemblyReference.cache

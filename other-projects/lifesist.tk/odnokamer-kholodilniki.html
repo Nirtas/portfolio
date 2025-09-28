@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link href="css/global.css" rel="stylesheet">
+    <link href="css/listItems.css" rel="stylesheet">
+    <title>Холодильники однокамерные</title>
+    <script src="js/icons.js"></script>
+    <script src='/js/jquery.min.js'></script>
+    <script src="js/countItems.js"></script>
+</head>
+
+<body>
+    <?php
+        $_POST['key'] = 'header';
+        include ('php/header-footer.php');
+    ?>
+
+    <main>
+        <h1>Холодильники однокамерные</h1>
+        <p class="indent"></p>
+        <div style="display: flex;">
+            <div class="sidebar">
+                <form action="" name="filters">
+                    <ul>Марка
+                        <li><input type="checkbox" name="brand" value="brand1">ATLANT</li>
+                        <li><input type="checkbox" name="brand" value="brand2">LIEBHERR</li>
+                        <li><input type="checkbox" name="brand" value="brand3">MIDEA</li>
+                        <li><input type="checkbox" name="brand" value="brand4">POZIS</li>
+                    </ul>
+                    <ul>Страна-производитель
+                        <li><input type="checkbox" name="country" value="country1">Беларусь</li>
+                        <li><input type="checkbox" name="country" value="country2">Болгария</li>
+                        <li><input type="checkbox" name="country" value="country3">Китай</li>
+                        <li><input type="checkbox" name="country" value="country4">Россия</li>
+                    </ul>
+                    Цена, руб.
+                    <p>
+                    <input type="text" id="minprice" placeholder="От">
+                    <input type="text" id="maxprice" placeholder="До">
+                    <p>
+                    Энергопотребление (кВтч/год)
+                    <p>
+                    <input type="text" id="minConsum" placeholder="От">
+                    <input type="text" id="maxConsum" placeholder="До">
+                    <ul>Тип управления
+                        <li><input type="checkbox" name="controlType" value="controlType1">механическое</li>
+                        <li><input type="checkbox" name="controlType" value="controlType2">электромеханическое</li>
+                    </ul>
+                    Объем холодильной камеры (л)
+                    <p>
+                    <input type="text" id="mincoolingVolume" placeholder="От">
+                    <input type="text" id="maxcoolingVolume" placeholder="До">
+                    <p>
+                    Объем морозильной камеры (л)
+                    <p>
+                    <input type="text" id="minfreezerVolume" placeholder="От">
+                    <input type="text" id="maxfreezerVolume" placeholder="До">
+                    <ul>Тип разморозки ХК
+                        <li><input type="checkbox" name="typeDefrosCooling" value="typeDefrosCooling1">капельный</li>
+                        <li><input type="checkbox" name="typeDefrosCooling" value="typeDefrosCooling2">ручной</li>
+                    </ul>
+                    <ul>Тип разморозки МК
+                        <li><input type="checkbox" name="typeDefrosFreezer" value="typeDefrosFreezer1">ручной</li>
+                        <li><input type="checkbox" name="typeDefrosFreezer" value="typeDefrosFreezer2">отсутствует</li>
+                    </ul>
+                    <ul>Гарантия
+                        <li><input type="checkbox" name="warranty" value="warranty1">1 год</li>
+                        <li><input type="checkbox" name="warranty" value="warranty2">2 года</li>
+                        <li><input type="checkbox" name="warranty" value="warranty3">3 года</li>
+                    </ul>
+                    <p>
+                    <input type="button" value="Показать" id="showFilters">
+                    <input type="reset" id="resetFilters">
+                </form>
+            </div>
+
+            <div class="content">
+                <ul>
+                    <?php
+                        include ('php/s.php');
+                    ?>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <p class="indent"></p>
+    <p class="indent"></p>
+
+    <?php
+        $_POST['key'] = 'footer';
+        include ('php/header-footer.php');
+    ?>
+
+</body></html>

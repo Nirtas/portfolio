@@ -1,0 +1,106 @@
+﻿<Window x:Class="EmploymentService.WindowProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EmploymentService"
+        mc:Ignorable="d"
+        Title="Служба занятости" Height="750" Width="550" ResizeMode="CanMinimize" Icon="images/Logo.png">
+    <Grid>
+        <Grid>
+            <Label Content="Служба занятости населения" Margin="138,10,0,0" VerticalAlignment="Top" FontSize="18" HorizontalAlignment="Left" Width="249"/>
+            <Label Content="Профиль" Margin="138,49,0,0" VerticalAlignment="Top" FontSize="18" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="249"/>
+            <Button x:Name="ButtonBack" Content="Назад" Margin="10,10,0,0" VerticalAlignment="Top" Height="31" FontSize="14" HorizontalAlignment="Left" Width="66" Click="ButtonBack_Click"/>
+        </Grid>
+
+        <ScrollViewer Visibility="Visible" Margin="0,91,0,0">
+            <Grid x:Name="GridProfile" Height="620">
+                <Grid x:Name="GridEmployeeInformation" Visibility="Hidden">
+                    <Label Content="Фамилия" HorizontalAlignment="Left" Margin="30,2,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="TextBoxSurname" HorizontalAlignment="Left" Height="23" Margin="30,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontSize="14" IsReadOnly="True"/>
+                    <Label Content="Имя" HorizontalAlignment="Left" Margin="30,59,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Height="23" Margin="30,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontSize="14" IsReadOnly="True"/>
+                    <Label Content="Отчество" HorizontalAlignment="Left" Margin="30,116,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="TextBoxMiddleName" HorizontalAlignment="Left" Height="23" Margin="30,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontSize="14" IsReadOnly="True"/>
+                    <Label Content="Дата рождения" HorizontalAlignment="Left" Margin="30,173,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="TextBoxBirthday" Height="23" Margin="30,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="130" IsReadOnly="True"/>
+                    <Label Content="Адрес" HorizontalAlignment="Left" Margin="312,2,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="TextBoxAddress" Height="80" Margin="312,31,30,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" IsReadOnly="True"/>
+                    <Label Content="Телефон" HorizontalAlignment="Left" Margin="312,116,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="TextBoxPhone" HorizontalAlignment="Left" Height="23" Margin="312,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontSize="14" IsReadOnly="True"/>
+
+                    <Button x:Name="ButtonEmployeeInformationEdit" Content="Редактировать" Margin="354,202,0,0" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="107" Click="ButtonEmployeeInformationEdit_Click"/>
+                    <Button x:Name="ButtonEmployeeInformationEditSave" Content="Сохранить" Margin="311,202,0,0" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="85" Visibility="Hidden" Click="ButtonEmployeeInformationEditSave_Click"/>
+                    <Button x:Name="ButtonEmployeeInformationEditCancel" Content="Отменить" Margin="412,202,0,0" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="85" Visibility="Hidden" Click="ButtonEmployeeInformationEditCancel_Click"/>
+
+                    <TabControl x:Name="TabControlAdditionalInformation" Height="320" Margin="30,247,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="467" FontSize="14">
+                        <TabItem Header="Документы об образовании">
+                            <Grid>
+                                <Grid x:Name="GridEduDocuments">
+                                    <TextBlock x:Name="TextBlockNumEduDocument" Margin="194,13,0,0" TextWrapping="Wrap" Text="Документ 1" VerticalAlignment="Top" FontSize="14" TextAlignment="Center" HorizontalAlignment="Left" Width="74"/>
+                                    <Button x:Name="ButtonPrevEduDocument" Content="Назад" HorizontalAlignment="Left" Margin="16,11,0,0" VerticalAlignment="Top" Width="59" FontSize="14" Visibility="Hidden" Click="ButtonPrevEduDocument_Click"/>
+                                    <Button x:Name="ButtonNextEduDocument" Content="Вперед" HorizontalAlignment="Left" Margin="83,11,0,0" VerticalAlignment="Top" Width="59" FontSize="14" Click="ButtonNextEduDocument_Click"/>
+
+                                    <Label Content="Номер документа" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                                    <TextBox x:Name="TextBoxDocNum" HorizontalAlignment="Left" Height="23" Margin="10,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" FontSize="14" IsReadOnly="True"/>
+                                    <Label Content="Название учебного заведения" HorizontalAlignment="Left" Margin="228,45,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                                    <TextBox x:Name="TextBoxInstitName" Height="117" Margin="228,74,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" IsReadOnly="True"/>
+                                    <Label Content="Образование" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                                    <TextBox x:Name="TextBoxEducation" HorizontalAlignment="Left" Height="70" Margin="10,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" FontSize="14" IsReadOnly="True"/>
+                                    <Label Content="Дата получения" HorizontalAlignment="Left" Margin="10,206,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                                    <TextBox x:Name="TextBoxIssueDate" Height="23" Margin="10,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="130" IsReadOnly="True"/>
+                                </Grid>
+
+                                <TextBlock x:Name="TextBlockEduDocumentsNotExist" Margin="122,42,0,0" TextWrapping="Wrap" Text="Документов об образовании нет" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="216" Visibility="Hidden"/>
+
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Опыт работы">
+                            <Grid>
+                                <Grid x:Name="GridWorkExps">
+                                    <TextBlock x:Name="TextBlockNumWorkExp" Margin="194,13,0,0" TextWrapping="Wrap" Text="Опыт работы 1" VerticalAlignment="Top" FontSize="14" TextAlignment="Center" HorizontalAlignment="Left"/>
+                                    <Button x:Name="ButtonPrevWorkExp" Content="Назад" HorizontalAlignment="Left" Margin="16,11,0,0" VerticalAlignment="Top" Width="59" FontSize="14" Visibility="Hidden" Click="ButtonPrevWorkExp_Click"/>
+                                    <Button x:Name="ButtonNextWorkExp" Content="Вперед" HorizontalAlignment="Left" Margin="83,11,0,0" VerticalAlignment="Top" Width="59" FontSize="14" Click="ButtonNextWorkExp_Click"/>
+
+                                    <Label Content="Начало работы" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                                    <TextBox x:Name="TextBoxStartDate" HorizontalAlignment="Left" Height="23" Margin="10,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontSize="14" IsReadOnly="True"/>
+                                    <Label Content="Краткое описание" HorizontalAlignment="Left" Margin="228,102,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                                    <TextBox x:Name="TextBoxShortDescription" Height="120" Margin="228,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="223" IsReadOnly="True"/>
+                                    <Label Content="Окончание работы" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                                    <TextBox x:Name="TextBoxEndDate" HorizontalAlignment="Left" Height="23" Margin="10,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" FontSize="14" IsReadOnly="True"/>
+                                    <Label Content="Должность" HorizontalAlignment="Left" Margin="10,45,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                                    <TextBox x:Name="TextBoxPost" Height="43" Margin="10,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="190" IsReadOnly="True"/>
+                                    <Label Content="Организация" HorizontalAlignment="Left" Margin="228,45,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                                    <TextBox x:Name="TextBoxOrganization" Height="23" Margin="228,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="190" IsReadOnly="True"/>
+                                </Grid>
+
+                                <TextBlock x:Name="TextBlockWorkExpsNotExist" Margin="122,42,0,0" TextWrapping="Wrap" Text="Опыта работы нет" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="216" Visibility="Hidden" TextAlignment="Center"/>
+
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+
+                <Grid x:Name="GridOrganization" Visibility="Hidden">
+                    <Label Content="Название" HorizontalAlignment="Left" Margin="30,2,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="TextBoxOrganizationName" HorizontalAlignment="Left" Height="23" Margin="30,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontSize="14" IsReadOnly="True"/>
+                    <Label Content="Дата основания" HorizontalAlignment="Left" Margin="30,59,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="TextBoxFoundationDate" Height="23" Margin="30,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="130" IsReadOnly="True"/>
+                    <Label Content="Информация" HorizontalAlignment="Left" Margin="265,2,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold"/>
+                    <TextBox x:Name="TextBoxOrganizationInformation" Height="120" Margin="265,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="232" IsReadOnly="True"/>
+
+                    <Button x:Name="ButtonOrganizationInformationEdit" Content="Редактировать" Margin="210,182,0,0" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="107" Click="ButtonOrganizationInformationEdit_Click"/>
+                    <Button x:Name="ButtonOrganizationInformationEditSave" Content="Сохранить" Margin="167,182,0,0" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="85" Visibility="Hidden" Click="ButtonOrganizationInformationEditSave_Click"/>
+                    <Button x:Name="ButtonOrganizationInformationEditCancel" Content="Отменить" Margin="268,182,0,0" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="85" Visibility="Hidden" Click="ButtonOrganizationInformationEditCancel_Click"/>
+                </Grid>
+
+                <Grid x:Name="GridAdmin" Visibility="Hidden">
+                    <Label Content="Тут пусто..." Margin="225,23,0,0" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="78"/>
+                    <Image Height="230" Margin="70,63,0,0" VerticalAlignment="Top" Source="images/empty.jpg" HorizontalAlignment="Left" Width="387"/>
+                </Grid>
+
+                <Button x:Name="ButtonDeleteAccount" Content="Удалить аккаунт" Margin="203,590,0,0" VerticalAlignment="Top" FontSize="14" HorizontalAlignment="Left" Width="118" Click="ButtonDeleteAccount_Click"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

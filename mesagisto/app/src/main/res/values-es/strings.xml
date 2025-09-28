@@ -1,0 +1,92 @@
+<resources>
+    <!--  Global  -->
+    <string name="changes_toast_empty_required_fields">Complete los campos obligatorios</string>
+    <string name="changes_toast_spaces_in_inputs">Los campos no deben contener espacios</string>
+    <string name="changes_toast_successful_update">Se han actualizado los datos</string>
+    <string name="layout_default_text_user_name">Nombre de usuario</string>
+
+    <!--  Registration  -->
+    <string name="registration_phone_label">Ingrese su número telefónico</string>
+    <string name="registration_phone_hint">Número de teléfono</string>
+    <string name="registration_title_phone_enter">Ingresando un número de teléfono</string>
+    <string name="registration_confirm_phone_label">Ingrese el código del SMS</string>
+    <string name="registration_toast_empty_phone">Ingrese su número telefónico</string>
+
+    <!--  Chats  -->
+    <string name="chat_action_menu_clear_chat">Vacie la conversacion</string>
+    <string name="chat_toast_chat_cleared">Se borró el chat</string>
+    <string name="chat_action_menu_delete_chat">Eliminar chat</string>
+    <string name="chat_toast_chat_deleted">El chat ha sido eliminado</string>
+    <string name="chat_message_empty_input">Ingrese su mensaje</string>
+    <string name="chat_toast_message_deleted">El mensaje ha borrado</string>
+    <string name="chat_toast_message_changed">El mensaje ha cambiado</string>
+    <string name="chat_input_message_hint">Mensaje</string>
+    <string name="chat_input_message_recording">Grabación</string>
+    <string name="chat_message_default_text">Mensaje</string>
+
+    <!--  Bottom Navigation  -->
+    <string name="bottom_navigation_item_settings">Ajustes</string>
+    <string name="bottom_navigation_item_main_list">Chats</string>
+    <string name="bottom_navigation_item_contacts">Contactos</string>
+
+    <!--  Settings  -->
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_label_account">Cuenta</string>
+    <string name="settings_account_label_phone_number">Número de teléfono</string>
+    <string name="settings_account_label_login">Acceso</string>
+    <string name="settings_account_additional_info">Sobre mí</string>
+    <string name="settings_account_label_additional_info">Información Adicional</string>
+    <string name="settings_action_menu_exit">Producción</string>
+    <string name="settings_action_menu_change_fullname">Cambiar nombre</string>
+    <string name="settings_action_menu_change_user_photo">Cambiar avatar</string>
+    <string name="settings_label_other">Otro</string>
+    <string name="settings_other_theme_switcher_text">Tema oscuro</string>
+    <string name="settings_other_theme_switcher_sub_text">Activa el tema oscuro</string>
+    <string name="settings_label_theme_changed">¡Esto es increíble!</string>
+
+    <!--  Change fullname  -->
+    <string name="change_fullname_title">Nombre</string>
+    <string name="change_fullname_enter_name_hint">Nombre (requerido)</string>
+    <string name="change_fullname_enter_surname_hint">Apellido (opcional)</string>
+
+    <!--  Change login  -->
+    <string name="change_login_title">Acceso</string>
+    <string name="change_login_enter_login_hint">Iniciar sesión (requerido)</string>
+    <string name="change_login_toast_login_already_in_use">El inicio de sesión ya está en uso, intente con otro</string>
+
+    <!--  Change user info  -->
+    <string name="change_user_info_title">Sobre mí</string>
+    <string name="change_user_info_user_info_hint">Información adicional (opcional)</string>
+
+    <!--  Groups  -->
+    <string name="group_settings_name_hint">Nombre del grupo (obligatorio)</string>
+    <string name="group_settings_label_users">Una lista de usuarios</string>
+    <string name="group_add_user_title">Agregar usuarios</string>
+    <string name="group_add_user_toast_no_users">No puede crear un grupo sin miembros</string>
+    <string name="group_action_menu_exit">Deja el grupo</string>
+    <string name="group_toast_left_group">Dejaste el grupo</string>
+    <string name="group_settings_title">Configuración de grupo</string>
+    <string name="group_settings_toast_choose_pic">Elige una imagen</string>
+    <string name="create_group">Para crear un grupo</string>
+
+    <!--  Main List  -->
+    <string name="main_list_last_message_image">Imagen</string>
+    <string name="main_list_last_message_file">Archivo</string>
+    <string name="main_list_last_message_voice">Un mensaje de voz</string>
+    <string name="main_list_last_message_sender_me">Tú</string>
+    <string name="main_list_last_message_no_messages">No hay mensajes</string>
+    <string name="main_list_last_message_default_text">Último mensaje</string>
+    <string name="main_list_title">Chats</string>
+
+    <!--  Contacts  -->
+    <string name="contacts_title">Contactos</string>
+
+    <!--  Alert Dialogs  -->
+    <string name="alert_dialog_delete_message_title">Borrar mensaje</string>
+    <string name="alert_dialog_delete_message_content">¿Seguro que quieres borrar este mensaje?</string>
+    <string name="alert_dialog_button_delete">Borrar</string>
+    <string name="alert_dialog_button_cancel">Cancelar</string>
+    <string name="alert_dialog_edit_message_title">Editando un mensaje</string>
+    <string name="alert_dialog_button_save">Ahorrar</string>
+
+</resources>

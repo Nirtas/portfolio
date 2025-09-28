@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link href="css/catalog.css" rel="stylesheet">
+    <link href="css/global.css" rel="stylesheet">
+    <title>Микроволновые печи</title>
+    <script src="js/icons.js"></script>
+    <script src='/js/jquery.min.js'></script>
+</head>
+
+<body>
+    <?php
+        $_POST['key'] = 'header';
+        include ('php/header-footer.php');
+    ?>
+    
+    <main>
+        <h1>Микроволновые печи</h1>
+
+        <p class="indent"></p>
+
+        <ul>
+            <div style="display:flex; flex-wrap: wrap; padding-left: 15px;">
+
+                <!-- Категория 1 -->
+                <li>
+                    <div class="catalog-card">
+                        <div class="catalog-card-img-position">
+                            <a href="microwaves.html"><img src="images/category-microwaves.jpg" alt=""></a>
+                        </div>
+                        <div class="catalog-card-name-position">
+                            <a href="microwaves.html">Микроволновые печи</a>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Категория 2 -->
+                <li>
+                    <div class="catalog-card">
+                        <div class="catalog-card-img-position">
+                            <a href=""><img src="images/category-pechi-SVCH-vstraiv.jpg" alt=""></a>
+                        </div>
+                        <div class="catalog-card-name-position">
+                            <a href="">Печи СВЧ встраиваемые</a>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Категория 3 -->
+                <li>
+                    <div class="catalog-card">
+                        <div class="catalog-card-img-position">
+                            <a href=""><img src="images/category-electropechi.jpg" alt=""></a>
+                        </div>
+                        <div class="catalog-card-name-position">
+                            <a href="">Электропечи</a>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Категория 4 -->
+                <li>
+                    <div class="catalog-card">
+                        <div class="catalog-card-img-position">
+                            <a href=""><img src="images/category-tarelki-microwaves.jpg" alt=""></a>
+                        </div>
+                        <div class="catalog-card-name-position">
+                            <a href="">Тарелки для микроволновой печи</a>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Категория 5 -->
+                <li>
+                    <div class="catalog-card">
+                        <div class="catalog-card-img-position">
+                            <a href=""><img src="images/category-kronshteiny-SVCH.jpg" alt=""></a>
+                        </div>
+                        <div class="catalog-card-name-position">
+                            <a href="">Кронштейны для СВЧ</a>
+                            <p>
+                        </div>
+                    </div>
+                </li>
+
+
+            </div>
+        </ul>
+    </main>
+
+    <p class="indent"></p>
+    <p class="indent"></p>
+
+    <?php
+        $_POST['key'] = 'footer';
+        include ('php/header-footer.php');
+    ?>
+
+</body></html>

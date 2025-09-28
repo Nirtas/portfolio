@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--  Global  -->
+    <attr name="colorDrawableArrowNext" format="color" />
+    <attr name="colorDrawableItemCheck" format="color" />
+    <attr name="colorDrawableSubmitChanges" format="color" />
+    <attr name="colorDrawableActionMenu" format="color" />
+    <attr name="colorDrawableDefaultUserPhoto" format="color" />
+    <attr name="colorBackground" format="color" />
+    <attr name="colorRippleEffect" format="color" />
+    <attr name="colorText" format="color" />
+    <attr name="colorSubText" format="color" />
+    <attr name="colorTextHint" format="color" />
+    <attr name="colorBackgroundCIV" format="color" />
+    <attr name="colorToolbarTitle" format="color" />
+    <attr name="colorActionMenuText" format="color" />
+    <attr name="colorDrawableAppIcon" format="color" />
+    <attr name="colorBottomNavigationViewSelected" format="color" />
+    <attr name="colorSwitchChecked" format="color" />
+
+    <!--  Chat  -->
+    <attr name="colorBubbleMyMessage" format="color" />
+    <attr name="colorBubbleYourMessage" format="color" />
+    <attr name="colorDrawableDeleteChat" format="color" />
+    <attr name="colorDrawableClearChat" format="color" />
+    <attr name="colorDrawableAttach" format="color" />
+    <attr name="colorDrawableAttachImage" format="color" />
+    <attr name="colorDrawableAttachFile" format="color" />
+    <attr name="colorDrawableVoiceRecording" format="color" />
+    <attr name="colorDrawableChats" format="color" />
+    <attr name="colorDrawableCreateGroup" format="color" />
+    <attr name="colorDrawablePlay" format="color" />
+    <attr name="colorDrawablePause" format="color" />
+    <attr name="colorDrawableSendMessage" format="color" />
+    <attr name="colorChatBackground" format="color" />
+    <attr name="colorChatText" format="color" />
+    <attr name="colorChatInputMessage" format="color" />
+    <attr name="colorDrawableVoiceRecordingPressed" format="color" />
+
+    <!--  Settings  -->
+    <attr name="colorDrawableChangePhoto" format="color" />
+    <attr name="colorDrawableChangeFullname" format="color" />
+    <attr name="colorDrawableExitApp" format="color" />
+    <attr name="colorDrawableSettings" format="color" />
+    <attr name="colorSeparator" format="color" />
+    <attr name="colorUserHeaderFullname" format="color" />
+    <attr name="colorSettingsLabel" format="color" />
+
+    <!--  Contacts  -->
+    <attr name="colorDrawableContacts" format="color" />
+
+    <!--  Registration  -->
+    <attr name="colorVerCodeEditTextBottomLineNormal" format="color" />
+    <attr name="colorVerCodeEditTextBottomLineSelected" format="color" />
+
+    <!--  Alert Dialogs  -->
+    <attr name="colorNegativeButton" format="color" />
+    <attr name="colorPositiveButton" format="color" />
+
+    <!--  Main List  -->
+    <attr name="colorDrawableAdd" format="color" />
+
+</resources>

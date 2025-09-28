@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="toolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:textColorPrimary">?attr/colorActionMenuText</item>
+        <item name="titleTextColor">?attr/colorToolbarTitle</item>
+    </style>
+
+    <style name="separator">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/separator_height</item>
+        <item name="android:layout_marginStart">@dimen/margin_large</item>
+        <item name="android:layout_marginTop">@dimen/margin_small</item>
+        <item name="android:background">?attr/colorSeparator</item>
+    </style>
+
+    <style name="fab">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/margin_large</item>
+        <item name="android:layout_marginBottom">@dimen/margin_large</item>
+        <item name="maxImageSize">@dimen/fab_max_image_size</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="tint">?attr/colorDrawableArrowNext</item>
+    </style>
+
+    <style name="editText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:backgroundTint">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textColorHint">?attr/colorTextHint</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="userItemButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">@dimen/margin_standard</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/ripple_effect</item>
+    </style>
+
+    <style name="userItemButtonText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/margin_large</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:textSize">@dimen/text_size_standard</item>
+    </style>
+
+    <style name="userItemButtonSubText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/margin_large</item>
+        <item name="android:textColor">?attr/colorSubText</item>
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
+    <style name="settingsLabel">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_large</item>
+        <item name="android:textColor">?attr/colorSettingsLabel</item>
+        <item name="android:textSize">@dimen/text_size_standard</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="switcher">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/margin_large</item>
+        <item name="theme">@style/Switch</item>
+    </style>
+
+    <style name="userHeaderFullname">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/margin_standard</item>
+        <item name="android:layout_marginEnd">@dimen/margin_large</item>
+        <item name="android:lines">1</item>
+        <item name="android:textColor">?attr/colorUserHeaderFullname</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+    </style>
+
+    <style name="civ">
+        <item name="civ_border_width">@dimen/photo_border_width</item>
+        <item name="civ_circle_background_color">?attr/colorBackgroundCIV</item>
+    </style>
+
+    <style name="BottomNavigationTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">?attr/colorBottomNavigationViewSelected</item>
+    </style>
+
+    <style name="Switch" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorControlActivated">?attr/colorSwitchChecked</item>
+    </style>
+
+</resources>

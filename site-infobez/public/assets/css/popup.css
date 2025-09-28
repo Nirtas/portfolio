@@ -1,0 +1,56 @@
+.modal-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgb(255, 255, 255, 0.8);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    z-index: 99;
+}
+
+.modal-wrapper.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    width: 0px;
+    height: 0px;
+    display: block;
+    margin-left: -220px;
+    position: relative;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.8);
+    top: 10%;
+    left: 50%;
+    background: black;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.modal-wrapper.open .modal {
+    opacity: 1;
+}
+
+.popup-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-left: 20px;
+}
+
+.popup-message {
+    font-size: 1.1em;
+}
+
+.btn-close {
+    font-size: 20px;
+    display: block;
+    float: right;
+    color: black;
+	margin-top: -5px;
+	margin-right: 10px;
+}

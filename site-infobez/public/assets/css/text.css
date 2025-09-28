@@ -1,0 +1,83 @@
+.text h1 {
+    justify-content: center;
+    display: flex;
+    font-size: 2em;
+    margin-block-start: 0;
+    margin-block-end: 1.5em;
+}
+
+.text h2 {
+    display: flex;
+    font-size: 1.6em;
+    margin-block-start: 1.6em;
+    margin-block-end: 1.6em;
+}
+
+.text p,
+.text ol li {
+    font-size: 1.3em;
+    line-height: 1.8em;
+}
+
+.text p a {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.image {
+    text-align: center;
+    font-style: italic;
+    color: gray;
+    cursor: pointer;
+    max-width: 400px;
+    padding: 10px 10px 0 10px;
+    margin: 0 10px 0 10px;
+}
+
+.image img {
+    max-width: 100%;
+}
+
+.fullsize {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    z-index: 1;
+    background: rgb(255, 255, 255, 0.8);
+}
+
+.image .fullsize img {
+    max-width: none;
+}
+
+.text p.note {
+    font-style: italic;
+    font-size: 1.4em;
+}
+
+.text table td {
+    font-style: italic;
+    font-size: 1.4em;
+    line-height: 1.8em;
+    min-width: 20px;
+}
+
+.text tr.border_bottom td {
+    border-bottom: 1px solid black;
+}
+
+.text #grade-table {
+    border-spacing: 0;
+}
+
+.text #grade-table td {
+    min-width: 100px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 0 5px 0 5px;
+}
+
+.final-test-task-card {
+    height: 600px;
+}

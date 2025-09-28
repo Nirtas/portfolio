@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chat_message_my_message_constraint_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:background="@drawable/chat_message_bubble_my_message"
+        android:paddingStart="@dimen/padding_standard"
+        android:paddingEnd="@dimen/padding_standard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/chat_message_my_message_text_text_view"
+            android:layout_width="wrap_content"
+            android:maxWidth="@dimen/chat_message_text_max_width"
+            android:gravity="start"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_standard"
+            android:textColor="?attr/colorChatText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/chat_message_default_text" />
+
+        <TextView
+            android:id="@+id/chat_message_my_message_time_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:paddingStart="@dimen/padding_standard"
+            android:paddingEnd="@dimen/padding_standard"
+            android:textColor="?attr/colorChatText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chat_message_my_message_text_text_view"
+            tools:text="@string/layout_default_text_time" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chat_message_your_message_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:paddingStart="@dimen/padding_standard"
+        android:paddingEnd="@dimen/padding_standard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/chat_message_your_message_text_user_photo"
+            android:layout_width="@dimen/chat_message_user_photo_width"
+            android:layout_height="@dimen/chat_message_user_photo_height"
+            android:src="@drawable/ic_default_user_photo"
+            style="@style/civ"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/chat_message_your_message_text_fullname"
+            android:layout_width="@dimen/chat_message_fullname_width"
+            android:ellipsize="marquee"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorChatText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/chat_message_your_message_text_content"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chat_message_your_message_text_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:background="@drawable/chat_message_bubble_your_message"
+            android:paddingStart="@dimen/padding_standard"
+            android:paddingEnd="@dimen/padding_standard"
+            app:layout_constraintTop_toBottomOf="@id/chat_message_your_message_text_fullname"
+            app:layout_constraintStart_toEndOf="@id/chat_message_your_message_text_user_photo">
+
+            <TextView
+                android:id="@+id/chat_message_your_message_text_text_view"
+                android:layout_width="wrap_content"
+                android:maxWidth="@dimen/chat_message_text_max_width"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:padding="@dimen/padding_standard"
+                android:textColor="?attr/colorChatText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/chat_message_default_text" />
+
+            <TextView
+                android:id="@+id/chat_message_your_message_time_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/padding_standard"
+                android:paddingEnd="@dimen/padding_standard"
+                android:textColor="?attr/colorChatText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chat_message_your_message_text_text_view"
+                tools:text="@string/layout_default_text_time" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

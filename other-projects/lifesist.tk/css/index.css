@@ -1,0 +1,215 @@
+.slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider__wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.slider__items {
+    display: flex;
+    transition: transform 0.7s ease;
+}
+
+.slider__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.slider__control {
+    position: absolute;
+    top: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    color: #fff;
+    text-align: center;
+    opacity: 0.5;
+    height: 50px;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.slider__control_show {
+    display: flex;
+}
+
+.slider__control:hover,
+.slider__control:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    opacity: 0.9;
+}
+
+.slider__control_prev {
+    left: 0;
+}
+
+.slider__control_next {
+    right: 0;
+}
+
+.slider__control::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.slider__control_prev::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.slider__control_next::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.slider__indicators {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.slider__indicators li {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 4px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: red;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.slider__indicators li.active {
+    background-color: darkred;
+}
+
+.radio_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.radio_buttons div {
+    float: left;
+}
+
+.radio_buttons input {
+    display: none;
+}
+
+.radio_buttons label {
+    display: block;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+    background: #FFFFFF;
+    color: #65CB5B;
+    font-size: 1.4em;
+}
+
+.radio_buttons input:checked + label {
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+    border-color: #65CB5B;
+    background: #65CB5B;
+    color: #FFFFFF;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+    border-radius: 20px;
+    max-width: 10em;
+    min-height: 20em;
+    margin: 5px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+}
+
+.card A {
+    color: black;
+    text-decoration: underline;
+}
+
+.card A:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.card h2 {
+    font-size: 0.8em;
+    color: darkgray;
+    font-weight: 1;
+}
+
+.card u {
+    font-size: 0.8em;
+}
+
+.card img {
+    width: 75%;
+    height: 75%;
+}
+
+.card:hover img {
+	transform: scale(1.05);
+}
+
+.img-position {
+    position: relative;
+    top: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.name-position {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: -15px;
+    padding: 0px 5px 0 5px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.price {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: -10px;
+}
+
+.price-code {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

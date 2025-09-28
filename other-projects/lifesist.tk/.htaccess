@@ -1,0 +1,5 @@
+AddHandler fcgid-script .php .phtml .html .htm
+FCGIWrapper /home/j/jerael/jerael.beget.tech/public_html .php
+FCGIWrapper /home/j/jerael/jerael.beget.tech/public_html .phtml
+FCGIWrapper /home/j/jerael/jerael.beget.tech/public_html .html
+FCGIWrapper /home/j/jerael/jerael.beget.tech/public_html .htm

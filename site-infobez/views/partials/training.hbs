@@ -1,0 +1,27 @@
+<div id="training">
+    <div class="image" style="float: right;">
+        <img id="task-card-img" src="">
+        <p id="task-card-note"></p>
+    </div>
+
+    <div class="training">
+        <p id="task"></p>
+
+        <p class="note" id="phrase"></p>
+
+        <p id="input-example"></p>
+
+        <form action="/check-answer" method="post" id="training-form">
+            <input type="text" class="input" placeholder="Введите ответ здесь" name="userAnswer">
+            <input type="hidden" id="key">
+            <input type="hidden" id="cipher-type">
+            <input type="hidden" id="question-type">
+            <button class="btn-check" type="submit">Проверить</button>
+        </form>
+
+        <p id="training-note"></p>
+
+        <p></p>
+        <button class="btn-refresh" onclick="CreateTask()">Обновить</button>
+    </div>
+</div>

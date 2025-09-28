@@ -1,0 +1,8 @@
+./frontend/node_modules
+./backend/.idea
+./backend/.venv
+./backend/__pycache__
+./backend/.env
+outputs
+bpmn_model
+qwen

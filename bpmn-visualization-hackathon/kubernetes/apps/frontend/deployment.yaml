@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      imagePullSecrets:
+      - name: gitlab-registry-secret
+      containers:
+      - name: frontend
+        image: git.codenrock.com:5050/it-one-cup-ml-challenge-1388/cnrprod1744452199-team-84334/sistema-postroeniya-diagramm/frontend:feat-qpsk-17-6ac6464f
+        ports:
+        - containerPort: 80
+        env:
+        - name: BACKEND_HOSTNAME
+          value: backend-service
+        - name: BACKEND_PORT
+          value: "4000"

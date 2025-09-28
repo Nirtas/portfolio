@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      imagePullSecrets:
+        - name: gitlab-registry-secret
+      containers:
+        - name: backend
+          image: git.codenrock.com:5050/it-one-cup-ml-challenge-1388/cnrprod1744452199-team-84334/sistema-postroeniya-diagramm/backend:feat-qpsk-17-63eaaad6
+          ports:
+            - containerPort: 4000
+          env:
+            - name: STT_HOSTNAME
+              value: "stt-service"
+            - name: STT_PORT
+              value: "6000"
+            - name: FLASK_SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: flask-secret
+                  key: FLASK_SECRET_KEY
+            - name: BACKEND_PORT
+              value: "4000"
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_USER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_PASSWORD
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: POSTGRES_DB
+            - name: DB_HOST
+              value: postgres-service
+            - name: DB_PORT
+              value: "5432"
+            - name: PERSISTENT_STORAGE_PATH
+              value: /persistent_data
+          volumeMounts:
+            - name: backend-chat-storage
+              mountPath: /persistent_data
+      volumes:
+        - name: backend-chat-storage
+          persistentVolumeClaim:
+            claimName: backend-chat-data-pvc

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.registration.PhoneEnterFragment">
+
+    <ImageView
+        android:id="@+id/app_icon_image_view"
+        android:layout_width="@dimen/registration_icon_width"
+        android:layout_height="@dimen/registration_icon_height"
+        android:layout_marginTop="@dimen/registration_items_margin_top"
+        android:contentDescription="@string/cd_picture_logo"
+        android:src="@drawable/ic_messenger"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/margin_standard"
+        android:layout_marginTop="@dimen/margin_largest"
+        android:layout_marginEnd="@dimen/margin_standard"
+        android:gravity="center_horizontal"
+        android:text="@string/registration_phone_label"
+        style="@style/userItemButtonText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_icon_image_view" />
+
+    <EditText
+        android:id="@+id/registration_phone_number_edit_text"
+        style="@style/editText"
+        android:layout_width="@dimen/registration_edit_text_width"
+        android:layout_marginTop="@dimen/registration_items_margin_top"
+        android:autofillHints=""
+        android:digits="0123456789+"
+        android:hint="@string/registration_phone_hint"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/registration_next_floating_action_button"
+        style="@style/fab"
+        android:src="@drawable/ic_arrow_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

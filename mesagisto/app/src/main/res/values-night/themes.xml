@@ -1,0 +1,74 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!--  Global  -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorBackground">@color/colorBlack</item>
+        <item name="colorText">@color/colorAccent</item>
+        <item name="colorSubText">@color/colorAccentDark</item>
+        <item name="colorTextHint">@color/colorAccentDark</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="android:colorBackground">?attr/colorBackground</item>
+        <item name="colorActionMenuText">@color/colorWhite</item>
+        <item name="colorDrawableArrowNext">@color/colorWhite</item>
+        <item name="colorDrawableSubmitChanges">@color/colorWhite</item>
+        <item name="colorDrawableItemCheck">@color/colorLightGreen</item>
+        <item name="civ_border_color">@color/colorPurple</item>
+        <item name="colorUserHeaderFullname">@color/colorWhite</item>
+        <item name="colorDrawableDefaultUserPhoto">@color/colorBlack</item>
+        <item name="colorRippleEffect">@color/colorGrey</item>
+        <item name="colorBackgroundCIV">@color/colorWhite</item>
+        <item name="colorDrawableActionMenu">@color/colorWhite</item>
+        <item name="colorToolbarTitle">@color/colorWhite</item>
+        <item name="colorControlNormal">@color/colorWhite</item>
+        <item name="colorDrawableAppIcon">@color/colorWhite</item>
+        <item name="colorBottomNavigationViewSelected">@color/colorBlue</item>
+        <item name="colorSwitchChecked">@color/colorBlue</item>
+
+        <!--  Chat  -->
+        <item name="colorBubbleMyMessage">@color/colorDarkBlue</item>
+        <item name="colorBubbleYourMessage">@color/colorPrimaryDark</item>
+        <item name="colorDrawableDeleteChat">@color/colorWhite</item>
+        <item name="colorDrawableClearChat">@color/colorWhite</item>
+        <item name="colorDrawableAttach">@color/colorWhite</item>
+        <item name="colorDrawableAttachImage">@color/colorWhite</item>
+        <item name="colorDrawableAttachFile">@color/colorWhite</item>
+        <item name="colorDrawableVoiceRecording">@color/colorWhite</item>
+        <item name="colorDrawableChats">@color/colorWhite</item>
+        <item name="colorDrawableCreateGroup">@color/colorWhite</item>
+        <item name="colorDrawablePlay">@color/colorWhite</item>
+        <item name="colorDrawablePause">@color/colorWhite</item>
+        <item name="colorDrawableSendMessage">@color/colorWhite</item>
+        <item name="colorChatBackground">?attr/colorBackground</item>
+        <item name="colorChatText">@color/colorWhite</item>
+        <item name="colorChatInputMessage">?attr/colorPrimary</item>
+        <item name="colorDrawableVoiceRecordingPressed">@color/colorBlue</item>
+
+        <!--  Settings  -->
+        <item name="colorDrawableChangePhoto">@color/colorWhite</item>
+        <item name="colorDrawableChangeFullname">@color/colorWhite</item>
+        <item name="colorDrawableExitApp">@color/colorWhite</item>
+        <item name="colorDrawableSettings">@color/colorWhite</item>
+        <item name="colorSeparator">@color/colorGrey</item>
+        <item name="colorSettingsLabel">@color/colorBlue</item>
+
+        <!--  Contacts  -->
+        <item name="colorDrawableContacts">@color/colorWhite</item>
+
+        <!--  Alert Dialogs  -->
+        <item name="colorNegativeButton">@color/colorAccent</item>
+        <item name="colorPositiveButton">@color/colorBlue</item>
+
+        <!--  Registration  -->
+        <item name="colorVerCodeEditTextBottomLineNormal">@color/colorHoloBlueLight</item>
+        <item name="colorVerCodeEditTextBottomLineSelected">@color/colorHoloOrangeLight</item>
+
+        <!--  Main List  -->
+        <item name="colorDrawableAdd">@color/colorWhite</item>
+
+    </style>
+
+</resources>

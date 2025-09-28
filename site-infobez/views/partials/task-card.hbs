@@ -1,0 +1,21 @@
+<div class="image" style="float: right;" onclick="ClickOnPicture(this)">
+    <img id="task-card-img" src="">
+    <p id="task-card-note"></p>
+</div>
+
+<div class="training">
+    <p id="task"></p>
+
+    <p class="note" id="phrase"></p>
+
+    <p id="input-example"></p>
+
+    <form class="final-test-form" action="/check-answer" method="post" id="final-test-form">
+        <input type="text" class="input" placeholder="Введите ответ здесь" name="userAnswer">
+        <input type="hidden" id="key">
+        <input type="hidden" id="cipher-type">
+        <input type="hidden" id="question-type">
+    </form>
+
+    <p id="training-note"></p>
+</div>

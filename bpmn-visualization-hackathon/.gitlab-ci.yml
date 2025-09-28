@@ -1,0 +1,203 @@
+stages:
+  - build_push
+  - update_manifest
+
+variables:
+  BACKEND_IMAGE: ${CI_REGISTRY_IMAGE}/backend
+  FRONTEND_IMAGE: ${CI_REGISTRY_IMAGE}/frontend
+  STT_IMAGE: ${CI_REGISTRY_IMAGE}/stt
+
+build_push_stt:
+  stage: build_push
+  image: docker:latest
+  services:
+    - name: docker:dind
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - IMAGE_TAG="${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}"
+    - FULL_IMAGE="${STT_IMAGE}:${IMAGE_TAG}"
+    - docker build --pull -t "${FULL_IMAGE}" ./stt
+    - docker push "${FULL_IMAGE}"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop" || $CI_COMMIT_BRANCH =~ /^feat\//'
+      changes:
+        - stt/**/*
+
+update_stt_manifest:
+  stage: update_manifest
+  image: alpine:latest
+  script:
+    |
+      apk add --no-cache git openssh-client
+      mkdir -p ~/.ssh
+      chmod 700 ~/.ssh
+      cp "$SSH_PUSH_KEY" ~/.ssh/id_ed25519
+      chmod 600 ~/.ssh/id_ed25519
+      
+      ssh-keyscan git.codenrock.com >> ~/.ssh/known_hosts
+      chmod 644 ~/.ssh/known_hosts
+      
+      git config --global url."git@git.codenrock.com:".insteadOf "https://git.codenrock.com/"
+      git config --global user.email "${GITLAB_USER_EMAIL:-'gitlab-ci@example.com'}"
+      git config --global user.name "${GITLAB_USER_NAME:-'GitLab CI'}"
+      GIT_SSH_REPO_URL="git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git"
+      git clone "$GIT_SSH_REPO_URL" repo
+      cd repo
+      git checkout $CI_COMMIT_BRANCH
+
+      IMAGE_TAG="${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}"
+      FULL_IMAGE="${STT_IMAGE}:${IMAGE_TAG}"
+      MANIFEST_FILE="kubernetes/apps/stt/deployment.yaml"
+
+      sed -i "s|image: ${STT_IMAGE}:.*|image: ${FULL_IMAGE}|g" ${MANIFEST_FILE}
+
+      git status
+
+      if ! git diff --quiet ${MANIFEST_FILE}; then
+        git add ${MANIFEST_FILE}
+        git commit -m "ci: Update stt image to ${IMAGE_TAG} in ${CI_COMMIT_BRANCH} [skip ci]"
+        git remote set-url --push origin "$GIT_SSH_REPO_URL"
+        git push origin $CI_COMMIT_BRANCH
+      else
+        echo "No changes detected in ${MANIFEST_FILE}. Nothing to commit."
+      fi
+  needs:
+    - build_push_stt
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop" || $CI_COMMIT_BRANCH =~ /^feat\//'
+      changes:
+        - stt/**/*
+
+build_push_backend:
+  stage: build_push
+  image: docker:latest
+  services:
+    - name: docker:dind
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - IMAGE_TAG="${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}"
+    - FULL_IMAGE="${BACKEND_IMAGE}:${IMAGE_TAG}"
+    - docker build --pull -t "${FULL_IMAGE}" ./backend --no-cache
+    - docker push "${FULL_IMAGE}"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop" || $CI_COMMIT_BRANCH =~ /^feat\//'
+      changes:
+        - backend/**/*
+
+update_backend_manifest:
+  stage: update_manifest
+  image: alpine:latest
+  script:
+    |
+      apk add --no-cache git openssh-client
+      mkdir -p ~/.ssh
+      chmod 700 ~/.ssh
+      cp "$SSH_PUSH_KEY" ~/.ssh/id_ed25519
+      chmod 600 ~/.ssh/id_ed25519
+      
+      ssh-keyscan git.codenrock.com >> ~/.ssh/known_hosts
+      chmod 644 ~/.ssh/known_hosts
+      
+      git config --global url."git@git.codenrock.com:".insteadOf "https://git.codenrock.com/"
+      git config --global user.email "${GITLAB_USER_EMAIL:-'gitlab-ci@example.com'}"
+      git config --global user.name "${GITLAB_USER_NAME:-'GitLab CI'}"
+      GIT_SSH_REPO_URL="git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git"
+      git clone "$GIT_SSH_REPO_URL" repo
+      cd repo
+      git checkout $CI_COMMIT_BRANCH
+
+      IMAGE_TAG="${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}"
+      FULL_IMAGE="${BACKEND_IMAGE}:${IMAGE_TAG}"
+      MANIFEST_FILE="kubernetes/apps/backend/deployment.yaml"
+
+      sed -i "s|image: ${BACKEND_IMAGE}:.*|image: ${FULL_IMAGE}|g" ${MANIFEST_FILE}
+
+      git status
+
+      if ! git diff --quiet ${MANIFEST_FILE}; then
+        git add ${MANIFEST_FILE}
+        git commit -m "ci: Update backend image to ${IMAGE_TAG} in ${CI_COMMIT_BRANCH} [skip ci]"
+        git remote set-url --push origin "$GIT_SSH_REPO_URL"
+        git push origin $CI_COMMIT_BRANCH
+      else
+        echo "No changes detected in ${MANIFEST_FILE}. Nothing to commit."
+      fi
+  needs:
+    - build_push_backend
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop" || $CI_COMMIT_BRANCH =~ /^feat\//'
+      changes:
+        - backend/**/*
+
+build_push_frontend:
+  stage: build_push
+  image: docker:latest
+  services:
+    - name: docker:dind
+      alias: docker
+  variables:
+    DOCKER_TLS_CERTDIR: "/certs"
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - IMAGE_TAG="${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}"
+    - FULL_IMAGE="${FRONTEND_IMAGE}:${IMAGE_TAG}"
+    - docker build --pull -t "${FULL_IMAGE}" ./frontend
+    - docker push "${FULL_IMAGE}"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop" || $CI_COMMIT_BRANCH =~ /^feat\//'
+      changes:
+        - frontend/**/*
+
+update_frontend_manifest:
+  stage: update_manifest
+  image: alpine:latest
+  script:
+    |
+      apk add --no-cache git openssh-client
+      mkdir -p ~/.ssh
+      chmod 700 ~/.ssh
+      cp "$SSH_PUSH_KEY" ~/.ssh/id_ed25519
+      chmod 600 ~/.ssh/id_ed25519
+      
+      ssh-keyscan git.codenrock.com >> ~/.ssh/known_hosts
+      chmod 644 ~/.ssh/known_hosts
+      
+      git config --global url."git@git.codenrock.com:".insteadOf "https://git.codenrock.com/"
+      git config --global user.email "${GITLAB_USER_EMAIL:-'gitlab-ci@example.com'}"
+      git config --global user.name "${GITLAB_USER_NAME:-'GitLab CI'}"
+      GIT_SSH_REPO_URL="git@${CI_SERVER_HOST}:${CI_PROJECT_PATH}.git"
+      git clone "$GIT_SSH_REPO_URL" repo
+      cd repo
+      git checkout $CI_COMMIT_BRANCH
+
+      IMAGE_TAG="${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}"
+      FULL_IMAGE="${FRONTEND_IMAGE}:${IMAGE_TAG}"
+      MANIFEST_FILE="kubernetes/apps/frontend/deployment.yaml"
+
+      sed -i "s|image: ${FRONTEND_IMAGE}:.*|image: ${FULL_IMAGE}|g" ${MANIFEST_FILE}
+
+      git status
+
+      if ! git diff --quiet ${MANIFEST_FILE}; then
+        git add ${MANIFEST_FILE}
+        git commit -m "ci: Update frontend image to ${IMAGE_TAG} in ${CI_COMMIT_BRANCH} [skip ci]"
+        git remote set-url --push origin "$GIT_SSH_REPO_URL"
+        git push origin $CI_COMMIT_BRANCH
+      else
+        echo "No changes detected in ${MANIFEST_FILE}. Nothing to commit."
+      fi
+  needs:
+    - build_push_frontend
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop" || $CI_COMMIT_BRANCH =~ /^feat\//'
+      changes:
+        - frontend/**/*

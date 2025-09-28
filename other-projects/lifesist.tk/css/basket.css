@@ -1,0 +1,131 @@
+.basket-warning {
+    font-size: 20px;
+    font-weight: 1;
+    text-align: justify;
+    padding: 0 15px 0 15px;
+}
+
+.basket-warning A {
+    font-size: 20px;
+    font-weight: 1;
+    text-align: justify;
+    color: black;
+    text-decoration: underline;
+}
+
+.basket-warning A:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.basket-card {
+    flex-wrap: wrap;
+    display: flex;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.img-item-basket {
+    margin-right: -50px;
+    padding: 5px 0px 5px 10px;
+}
+
+.img-item-basket img {
+    width: 50%;
+}
+
+.name-item-basket {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    padding-right: 35px;
+    font-size: 1.2em;
+}
+
+.name-item-basket A {
+    color: black;
+    text-decoration: underline;
+}
+
+.name-item-basket A:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.count-item-basket {
+    padding-top: 5px;
+}
+
+.count-item-basket input[type=text] {
+    width: 30px;
+    margin-left: -5px;
+    margin-right: -5px;
+    text-align: center;
+}
+
+.price-item-basket {
+    padding-left: 35px;
+}
+
+.price-item-basket,
+#totalCost {
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+#deleteItembasket {
+    margin-left: 10px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+#totalCost {
+    width: 150px;
+    border: none;
+    text-align: center;
+}
+
+#buyItems {
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
+    border-color: #65CB5B;
+    background: #65CB5B;
+    color: #FFFFFF;
+    font-size: 1.4em;
+    margin-left:30px;
+}
+
+.total {
+    float: right;
+    border: 2px solid #65CB5B;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.total-price {
+    font-size: 1.2em;
+    font-weight: 600;
+    width: 150px;
+    border: none;
+    text-align: center;
+}
+
+.buyItems {
+    margin-left: 10px;
+    border-color: #FFFFFF;
+    border-radius: 10px;
+    background: #65CB5B;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.buyItems:hover {
+    border-color: #65CB5B;
+    background: #FFFFFF;
+    color: #65CB5B;
+}

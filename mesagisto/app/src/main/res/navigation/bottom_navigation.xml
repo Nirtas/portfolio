@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@+id/navigation_main_list">
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.jerael.mesagisto.ui.settings.SettingsFragment"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_change_fullname"
+            app:destination="@id/navigation_change_fullname" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_main_list"
+            app:destination="@id/navigation_main_list" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_contacts"
+            app:destination="@id/navigation_contacts" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_change_login"
+            app:destination="@id/navigation_change_login" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_change_user_info"
+            app:destination="@id/navigation_change_user_info" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_phone_enter"
+            app:destination="@id/navigation_phone_enter" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_main_list"
+        android:name="com.jerael.mesagisto.ui.main_list.MainListFragment"
+        tools:layout="@layout/fragment_main_list">
+        <action
+            android:id="@+id/action_navigation_main_list_to_navigation_group_chat"
+            app:destination="@id/navigation_group_chat" />
+        <action
+            android:id="@+id/action_navigation_main_list_to_navigation_chat"
+            app:destination="@id/navigation_chat" />
+        <action
+            android:id="@+id/action_navigation_main_list_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_main_list_to_navigation_contacts"
+            app:destination="@id/navigation_contacts" />
+        <action
+            android:id="@+id/action_navigation_main_list_to_navigation_add_user"
+            app:destination="@id/navigation_add_user" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_contacts"
+        android:name="com.jerael.mesagisto.ui.contacts.ContactsFragment"
+        tools:layout="@layout/fragment_contacts">
+        <action
+            android:id="@+id/action_navigation_contacts_to_navigation_chat"
+            app:destination="@id/navigation_chat" />
+        <action
+            android:id="@+id/action_navigation_contacts_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_contacts_to_navigation_main_list"
+            app:destination="@id/navigation_main_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_change_fullname"
+        android:name="com.jerael.mesagisto.ui.change_fullname.ChangeFullnameFragment"
+        tools:layout="@layout/fragment_change_fullname">
+        <action
+            android:id="@+id/action_navigation_change_fullname_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+        <action
+            android:id="@+id/action_navigation_change_fullname_to_navigation_main_list"
+            app:destination="@id/navigation_main_list" />
+        <action
+            android:id="@+id/action_navigation_change_fullname_to_navigation_phone_verification"
+            app:destination="@id/navigation_phone_verification" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.jerael.mesagisto.ui.chat.ChatFragment"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragment_to_navigation_main_list"
+            app:destination="@id/navigation_main_list" />
+        <action
+            android:id="@+id/action_chatFragment_to_navigation_contacts"
+            app:destination="@id/navigation_contacts" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_group_chat"
+        android:name="com.jerael.mesagisto.ui.group_chat.GroupChatFragment"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_groupChatFragment_to_navigation_main_list"
+            app:destination="@id/navigation_main_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_change_login"
+        android:name="com.jerael.mesagisto.ui.change_login.ChangeLoginFragment"
+        tools:layout="@layout/fragment_change_login" >
+        <action
+            android:id="@+id/action_navigation_change_login_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_change_user_info"
+        android:name="com.jerael.mesagisto.ui.change_user_info.ChangeUserInfoFragment"
+        tools:layout="@layout/fragment_change_user_info" >
+        <action
+            android:id="@+id/action_navigation_change_user_info_to_navigation_settings"
+            app:destination="@id/navigation_settings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_phone_enter"
+        android:name="com.jerael.mesagisto.ui.registration.PhoneEnterFragment"
+        tools:layout="@layout/fragment_phone_enter" >
+        <action
+            android:id="@+id/action_navigation_phone_enter_to_navigation_phone_verification"
+            app:destination="@id/navigation_phone_verification" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_phone_verification"
+        android:name="com.jerael.mesagisto.ui.registration.PhoneVerificationFragment"
+        tools:layout="@layout/fragment_phone_verification" >
+        <action
+            android:id="@+id/action_navigation_phone_verification_to_navigation_change_fullname"
+            app:destination="@id/navigation_change_fullname" />
+        <action
+            android:id="@+id/action_navigation_phone_verification_to_navigation_main_list"
+            app:destination="@id/navigation_main_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_add_user"
+        android:name="com.jerael.mesagisto.ui.group_add_user.AddUserFragment"
+        tools:layout="@layout/fragment_add_user" >
+        <action
+            android:id="@+id/action_navigation_add_user_to_navigation_group_settings"
+            app:destination="@id/navigation_group_settings" />
+        <action
+            android:id="@+id/action_navigation_add_user_to_navigation_main_list"
+            app:destination="@id/navigation_main_list" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_group_settings"
+        android:name="com.jerael.mesagisto.ui.group_settings.GroupSettingsFragment"
+        tools:layout="@layout/fragment_group_settings" >
+        <action
+            android:id="@+id/action_navigation_group_settings_to_navigation_add_user"
+            app:destination="@id/navigation_add_user" />
+        <action
+            android:id="@+id/action_navigation_group_settings_to_navigation_main_list"
+            app:destination="@id/navigation_main_list" />
+    </fragment>
+
+</navigation>

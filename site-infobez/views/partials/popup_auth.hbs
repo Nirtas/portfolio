@@ -1,0 +1,44 @@
+<div id="auth-popup" class="modal-wrapper">
+    <div class="modal">
+        <div class="container">
+            <div class="frame">
+                <div class="popup-nav">
+                    <ul>
+                        <li class="signin-active"><a class="btn-auth">Вход</a></li>
+                        <li class="signup-inactive"><a class="btn-auth">Регистрация</a></li>
+                        <a id="close-auth-popup" class="btn-close trigger" href="#">
+                            <i class="fa fa-times" aria-hidden="true"></i>
+                        </a>
+                    </ul>
+                </div>
+                <div>
+                    <form class="form-signin" action="/authorization" method="post" id="auth-form-authorization">
+                        <label class="labels" for="login">Логин</label>
+                        <input class="form-styling" type="text" name="login">
+                        <label class="labels" for="password">Пароль</label>
+                        <input class="form-styling" type="password" name="password">
+                        <input type="submit" class="btn-signin" value="Войти">
+                    </form>
+
+                    <form class="form-signup" action="/registration" method="post" id="auth-form-registration">
+                        <label class="labels" for="login">Логин</label>
+                        <input class="form-styling" type="text" name="login">
+                        <label class="labels" for="password">Пароль</label>
+                        <input class="form-styling" type="password" name="password">
+
+                        <label class="labels" for="surname">Фамилия</label>
+                        <input class="form-styling" type="text" name="surname">
+                        <label class="labels" for="name">Имя</label>
+                        <input class="form-styling" type="text" name="name">
+                        <label class="labels" for="middlename">Отчество</label>
+                        <input class="form-styling" type="text" name="middlename">
+                        <label class="labels" for="group">Группа</label>
+                        <input class="form-styling" type="text" name="group">
+
+                        <input type="submit" class="btn-signup" value="Зарегистрироваться">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
